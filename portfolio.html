@@ -2,144 +2,150 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>かっこいい発表スライド</title>
+  <title>Flutterレシピ管理アプリ ポートフォリオ</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:700,400&display=swap" rel="stylesheet">
   <style>
     body {
-      background: linear-gradient(120deg, #232526 0%, #414345 100%);
-      color: #fff;
-      font-family: 'Segoe UI', 'Noto Sans JP', Arial, sans-serif;
       margin: 0;
-      height: 100vh;
-      overflow: hidden;
+      background: linear-gradient(135deg, #00bcd4 0%, #2196f3 100%);
+      font-family: 'Roboto', sans-serif;
+      color: #fff;
+      overflow-x: hidden;
     }
     .slide {
-      display: none;
+      min-height: 100vh;
+      display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      width: 100vw;
-      text-align: center;
-      padding: 40px;
+      padding: 40px 20px;
       box-sizing: border-box;
-      animation: fadein 0.7s;
+      transition: background 0.8s;
     }
-    .slide.active {
-      display: flex;
+    .slide h1 {
+      font-size: 3rem;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.05em;
+      text-shadow: 2px 4px 16px rgba(0,0,0,0.2);
     }
-    @keyframes fadein {
-      from { opacity: 0; transform: scale(0.96);}
-      to { opacity: 1; transform: scale(1);}
+    .slide h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #ffd600;
+      text-shadow: 1px 2px 8px rgba(0,0,0,0.15);
     }
-    .slide-title {
-      font-size: 2.6rem;
-      font-weight: bold;
-      margin-bottom: 1.5rem;
-      letter-spacing: 0.08em;
-      background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .slide p, .slide ul {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 1.5rem auto;
+      line-height: 1.7;
+      text-shadow: 1px 2px 8px rgba(0,0,0,0.08);
     }
-    .slide-content {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-      line-height: 1.6;
+    .slide ul {
+      list-style: disc inside;
+      padding-left: 0;
+    }
+    .slide img {
+      max-width: 320px;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      margin: 1.5rem 0;
+    }
+    .slide code {
+      background: rgba(255,255,255,0.08);
+      padding: 0.5em 1em;
+      border-radius: 8px;
+      display: block;
+      margin: 1.5rem auto;
+      color: #fffde7;
+      font-size: 1rem;
+      max-width: 700px;
+      overflow-x: auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
     }
     .slide-footer {
-      position: absolute;
-      bottom: 30px;
-      width: 100%;
-      text-align: center;
       font-size: 1rem;
-      color: #aaa;
-      letter-spacing: 0.02em;
-    }
-    .slide-nav {
-      position: absolute;
-      right: 30px;
-      bottom: 30px;
-      display: flex;
-      gap: 12px;
-    }
-    .slide-btn {
-      background: #222;
-      color: #fff;
-      border: 2px solid #43cea2;
-      border-radius: 50%;
-      width: 44px;
-      height: 44px;
-      font-size: 1.5em;
-      cursor: pointer;
-      transition: background 0.2s, border 0.2s;
-    }
-    .slide-btn:hover {
-      background: #43cea2;
-      color: #181818;
-      border-color: #185a9d;
+      color: #b3e5fc;
+      margin-top: 2rem;
+      opacity: 0.8;
     }
     @media (max-width: 600px) {
-      .slide-title { font-size: 1.6rem; }
-      .slide-content { font-size: 1.1rem; }
+      .slide h1 { font-size: 2rem; }
+      .slide h2 { font-size: 1.2rem; }
+      .slide p, .slide ul { font-size: 1rem; }
+      .slide img { max-width: 95vw; }
+      .slide code { font-size: 0.9rem; }
     }
   </style>
 </head>
 <body>
-  <div class="slide active">
-    <div class="slide-title">🚀 かっこいい発表スタート！</div>
-    <div class="slide-content">
-      あなたのアイデアを、最高にクールなスライドで発表しよう！
-    </div>
-    <div class="slide-footer">Press → or Enter</div>
-  </div>
-  <div class="slide">
-    <div class="slide-title">特徴 1</div>
-    <div class="slide-content">
-      ・シンプルなHTMLとCSSだけで動く<br>
-      ・キーボードやボタンでスライド切り替え
-    </div>
-    <div class="slide-footer">← 戻る / 進む →</div>
-  </div>
-  <div class="slide">
-    <div class="slide-title">特徴 2</div>
-    <div class="slide-content">
-      ・レスポンシブ対応でスマホでも見やすい<br>
-      ・アニメーションでかっこよく切り替わる
-    </div>
-    <div class="slide-footer">← 戻る / 進む →</div>
-  </div>
-  <div class="slide">
-    <div class="slide-title">まとめ</div>
-    <div class="slide-content">
-      かっこいい発表で、みんなの注目を集めよう！<br>
-      コードを改造して自分だけのスライドも作れるよ。
-    </div>
-    <div class="slide-footer">Thank you!</div>
-  </div>
-  <div class="slide-nav">
-    <button class="slide-btn" id="prevBtn" title="前のスライド">←</button>
-    <button class="slide-btn" id="nextBtn" title="次のスライド">→</button>
-  </div>
-  <script>
-    const slides = document.querySelectorAll('.slide');
-    let idx = 0;
-    function showSlide(n) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === n);
-      });
-    }
-    function nextSlide() {
-      if (idx < slides.length - 1) { idx++; showSlide(idx); }
-    }
-    function prevSlide() {
-      if (idx > 0) { idx--; showSlide(idx); }
-    }
-    document.getElementById('nextBtn').onclick = nextSlide;
-    document.getElementById('prevBtn').onclick = prevSlide;
-    document.addEventListener('keydown', e => {
-      if (e.key === 'ArrowRight' || e.key === 'Enter') nextSlide();
-      if (e.key === 'ArrowLeft') prevSlide();
-    });
-  </script>
+  <section class="slide" style="background: linear-gradient(135deg, #00bcd4 0%, #2196f3 100%);">
+    <h1>Flutter レシピ管理アプリ</h1>
+    <h2>就活用ポートフォリオ</h2>
+    <p>
+      食材・レシピをスマートに管理できるFlutter製アプリ。<br>
+      Firebase連携・並び替え・タグ・画像・シェアなど、実用的な機能を多数搭載！
+    </p>
+    <img src="https://user-images.githubusercontent.com/placeholder/recipe-edit-demo.png" alt="レシピ編集画面サンプル">
+    <div class="slide-footer">Designed &amp; Developed by [あなたの名前]</div>
+  </section>
+
+  <section class="slide" style="background: linear-gradient(135deg, #2196f3 0%, #00bcd4 100%);">
+    <h2>主な特徴</h2>
+    <ul>
+      <li>Firebase Firestoreによるリアルタイムデータ同期</li>
+      <li>レシピの並び替え（名前順・調理時間順・カロリー順など）</li>
+      <li>タグ・画像・URL・メモ・シェア機能</li>
+      <li>食材管理・おすすめレシピ提案</li>
+      <li>モダンなUI/UX（リスト・グリッド切替）</li>
+      <li>Flutter/Dartによる堅牢な設計</li>
+    </ul>
+  </section>
+
+  <section class="slide" style="background: linear-gradient(135deg, #00c9ff 0%, #92fe9d 100%);">
+    <h2>代表的なコード例</h2>
+    <p>レシピの賞味期限表示ロジック（utils.dart）</p>
+    <code>
+class ExpiryInfo {<br>
+&nbsp;&nbsp;final int displayDays;<br>
+&nbsp;&nbsp;final Color expiryColor;<br>
+&nbsp;&nbsp;final String expiryText;<br>
+&nbsp;&nbsp;ExpiryInfo(this.displayDays, this.expiryColor, this.expiryText);<br>
+}<br>
+<br>
+ExpiryInfo getExpiryInfo(int? daysUntilExpiry) {<br>
+&nbsp;&nbsp;int displayDays = daysUntilExpiry ?? 999;<br>
+&nbsp;&nbsp;Color expiryColor = Colors.grey;<br>
+&nbsp;&nbsp;String expiryText = "";<br>
+&nbsp;&nbsp;if (displayDays &lt; 0) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;expiryColor = Colors.red.shade700;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;expiryText = "(期限切れ)";<br>
+&nbsp;&nbsp;} else if (displayDays == 0) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;expiryColor = Colors.red;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;expiryText = "(あと0日)";<br>
+&nbsp;&nbsp;} else if (displayDays &lt;= 3) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;expiryColor = Colors.red;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;expiryText = "(あと $displayDays 日)";<br>
+&nbsp;&nbsp;} else if (daysUntilExpiry != null) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;expiryColor = themeColorNotifier.value;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;expiryText = "(あと $displayDays 日)";<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;return ExpiryInfo(displayDays, expiryColor, expiryText);<br>
+}
+    </code>
+    <div class="slide-footer">Dart/Flutterでのロジック例もアピールできます</div>
+  </section>
+
+  <section class="slide" style="background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);">
+    <h2>アピールポイント</h2>
+    <ul>
+      <li>設計・UI・ロジックすべて自作</li>
+      <li>Firebaseや外部API連携の経験</li>
+      <li>Flutterの状態管理・非同期処理の理解</li>
+      <li>実用的なアプリを一人で完成させた実績</li>
+    </ul>
+    <div class="slide-footer">GitHub: <a href="https://github.com/yourname/your-recipe-app" style="color:#fffde7;">your-recipe-app</a></div>
+  </section>
 </body>
 </html>
