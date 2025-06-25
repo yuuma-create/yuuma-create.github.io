@@ -37,7 +37,7 @@
     }
     .slide p, .slide ul {
       font-size: 1.2rem;
-      max-width: 600px;
+      max-width: 700px;
       margin: 0 auto 1.5rem auto;
       line-height: 1.7;
       text-shadow: 1px 2px 8px rgba(0,0,0,0.08);
@@ -70,12 +70,29 @@
       margin-top: 2rem;
       opacity: 0.8;
     }
+    .profile {
+      background: rgba(255,255,255,0.10);
+      border-radius: 16px;
+      padding: 2rem;
+      margin: 2rem 0;
+      color: #fff;
+      max-width: 700px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    }
+    .profile h2 {
+      color: #ffd600;
+      margin-top: 0;
+    }
+    .profile p {
+      margin-bottom: 1.2rem;
+    }
     @media (max-width: 600px) {
       .slide h1 { font-size: 2rem; }
       .slide h2 { font-size: 1.2rem; }
       .slide p, .slide ul { font-size: 1rem; }
       .slide img { max-width: 95vw; }
       .slide code { font-size: 0.9rem; }
+      .profile { padding: 1rem; }
     }
   </style>
 </head>
@@ -88,22 +105,64 @@
       Firebase連携・並び替え・タグ・画像・シェアなど、実用的な機能を多数搭載！
     </p>
     <img src="https://user-images.githubusercontent.com/placeholder/recipe-edit-demo.png" alt="レシピ編集画面サンプル">
-    <div class="slide-footer">Designed &amp; Developed by [あなたの名前]</div>
+    <div class="slide-footer">Designed &amp; Developed by yuma</div>
   </section>
 
   <section class="slide" style="background: linear-gradient(135deg, #2196f3 0%, #00bcd4 100%);">
-    <h2>主な特徴</h2>
-    <ul>
-      <li>Firebase Firestoreによるリアルタイムデータ同期</li>
-      <li>レシピの並び替え（名前順・調理時間順・カロリー順など）</li>
-      <li>タグ・画像・URL・メモ・シェア機能</li>
-      <li>食材管理・おすすめレシピ提案</li>
-      <li>モダンなUI/UX（リスト・グリッド切替）</li>
-      <li>Flutter/Dartによる堅牢な設計</li>
-    </ul>
+    <h2>制作背景・目的</h2>
+    <div class="profile">
+      <p>
+        就職活動の準備で時間が限られる中、日常の「レシピ選びに時間がかかる」という課題を解決したいという思いから、効率よく食事を選べるように、AIを活用したレシピ管理アプリをFlutterとFirebase、GitHub Copilotを用いて個人開発しました。
+        技術的には、OGP解析・AIタグ生成・音声読み上げなどを実装し、忙しい日々でも素早くレシピを見つけられるよう工夫しました。
+      </p>
+      <ul>
+        <li><strong>制作期間：</strong>約1か月</li>
+        <li><strong>使用技術・ツール：</strong>Flutter / Dart / Firebase / Gemini API / GitHub Copilot / ChatGPT など</li>
+      </ul>
+    </div>
   </section>
 
   <section class="slide" style="background: linear-gradient(135deg, #00c9ff 0%, #92fe9d 100%);">
+    <h2>主な仕組み・機能</h2>
+    <ul>
+      <li><strong>レシピ管理</strong>
+        <ul>
+          <li>レシピの追加・編集・削除（単品/一括URL追加）</li>
+          <li>レシピの詳細表示・WebView表示・シェア</li>
+          <li>レシピのタグ自動生成（Gemini API/AI連携）</li>
+          <li>レシピのクラウドリアルタイム同期（Firestore）</li>
+        </ul>
+      </li>
+      <li><strong>食材管理</strong>
+        <ul>
+          <li>食材のカテゴリ分け・画像管理（ローカル/URL/プリセット画像）</li>
+          <li>食材の在庫・賞味期限・数量管理</li>
+          <li>食材の検索（漢字/かな/カナ/ローマ字対応）</li>
+        </ul>
+      </li>
+      <li><strong>献立提案</strong>
+        <ul>
+          <li>1週間分の献立をAIが自動提案（材料・レシピ・オプション指定可）</li>
+          <li>提案結果の保存・再表示</li>
+        </ul>
+      </li>
+      <li><strong>検索・その他</strong>
+        <ul>
+          <li>複数サイト検索（WebView）</li>
+          <li>音声読み上げ（TTS）</li>
+          <li>材料自動計算（倍率指定で材料量を自動変換）</li>
+          <li>メモ機能</li>
+          <li>設定画面（動作確認済みサイト一覧、ライセンス表示、プライバシーポリシー等）</li>
+          <li>ユーザー認証（Google/Apple/Firebase）</li>
+        </ul>
+      </li>
+    </ul>
+    <div class="slide-footer">
+      <a href="https://youtube.com/shorts/sqIHLQAMkvs" style="color:#fffde7;" target="_blank">デモ動画を見る</a>
+    </div>
+  </section>
+
+  <section class="slide" style="background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);">
     <h2>代表的なコード例</h2>
     <p>レシピの賞味期限表示ロジック（utils.dart）</p>
     <code>
@@ -137,13 +196,31 @@ ExpiryInfo getExpiryInfo(int? daysUntilExpiry) {<br>
     <div class="slide-footer">Dart/Flutterでのロジック例もアピールできます</div>
   </section>
 
+  <section class="slide" style="background: linear-gradient(135deg, #185a9d 0%, #43cea2 100%);">
+    <h2>自己PR・エピソード</h2>
+    <div class="profile">
+      <p>
+        私の強みは「自分で課題を見つけて、手を動かしながら解決する行動力」と「粘り強く学び続ける姿勢」です。<br>
+        小学生の頃に中古ノートPCの性能改善に挑戦したことをきっかけに、ハードウェアへの関心が高まりました。高校時代には古物商許可を取得し、ジャンクPCを修理・販売する中で、調査・実践・改善を繰り返し、年間30万円前後の売上を安定して出すことを目標に運営していました。
+      </p>
+      <p>
+        現在は、FlutterとGitHub Copilotを活用し、自炊生活で感じた「レシピ選びの手間」を解消するアプリを開発中です。AIによるレシピ提案や検索機能を実装し、iOS・Androidの両方で実用的に動作するレベルまで完成させました。これらの経験を通じて、必要とされるものを考え、実装する力や、粘り強く学ぶ姿勢を培いました。今後は、これらの力をチーム開発でも活かし、設計やレビューを通じて成長していきたいです。
+      </p>
+      <p>
+        個人開発する中で、生成AIや機械学習の可能性に魅力を感じ、日常の課題を技術で解決できる面白さを実感しました。今後は、AIをはじめとする新しい技術への理解をさらに深め、より多くの人の役に立つサービスづくりに取り組んでいきたいと考えています。また、これまでは一人での開発が中心でしたが、今後はチームでの開発にも積極的に挑戦したいです。設計や分担、レビューなどを通して、実務に必要な技術力はもちろん、コミュニケーション力や課題整理力といったチームで働く力も高め、より実践的なスキルを身につけていきたいと考えています。
+      </p>
+    </div>
+  </section>
+
   <section class="slide" style="background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);">
-    <h2>アピールポイント</h2>
+    <h2>アピールポイントまとめ</h2>
     <ul>
       <li>設計・UI・ロジックすべて自作</li>
       <li>Firebaseや外部API連携の経験</li>
       <li>Flutterの状態管理・非同期処理の理解</li>
       <li>実用的なアプリを一人で完成させた実績</li>
+      <li>AI・機械学習技術への積極的な挑戦</li>
+      <li>チーム開発への意欲と成長志向</li>
     </ul>
     <div class="slide-footer">GitHub: <a href="https://github.com/yourname/your-recipe-app" style="color:#fffde7;">your-recipe-app</a></div>
   </section>
