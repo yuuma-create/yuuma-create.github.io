@@ -300,53 +300,15 @@
     .hero-content {
       position: relative;
       z-index: 2;
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .profile-avatar {
-      position: relative;
-    }
-
-    .profile-image {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #00E5FF 0%, #0D47A1 50%, #00BCD4 100%);
-      border: 4px solid rgba(255, 255, 255, 0.1);
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      font-size: 4.5rem;
-      color: white;
-      box-shadow: 
-        0 20px 60px rgba(0, 229, 255, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s ease;
-    }
-
-    .profile-image::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: conic-gradient(transparent, rgba(255, 255, 255, 0.2), transparent);
-      animation: rotate 4s linear infinite;
-    }
-
-    @keyframes rotate {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      text-align: center;
+      gap: 2rem;
     }
 
     .hero-info {
-      text-align: left;
+      text-align: center;
     }
 
     .main-title {
@@ -396,7 +358,7 @@
       flex-wrap: wrap;
       gap: 1rem;
       margin-bottom: 3rem;
-      justify-content: flex-start;
+      justify-content: center;
     }
 
     .tech-tag {
@@ -549,9 +511,9 @@
       }
 
       .hero-content {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         text-align: center;
-        gap: 3rem;
+        gap: 2rem;
       }
 
       .hero-info {
@@ -574,12 +536,6 @@
       .hero-card {
         padding: 3rem 2rem;
         margin: 0 1rem;
-      }
-
-      .profile-image {
-        width: 140px;
-        height: 140px;
-        font-size: 4rem;
       }
 
       .works-title {
@@ -748,7 +704,7 @@
     .social-links {
       display: flex;
       gap: 1.5rem;
-      justify-content: flex-start;
+      justify-content: center;
       margin-bottom: 4rem;
     }
 
@@ -1343,14 +1299,50 @@
     .work-image {
       width: 100%;
       height: 250px;
-      background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+      position: relative;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+
+    .work-image-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      transition: transform 0.3s ease;
+    }
+
+    .work-image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .work-image-overlay i {
+      font-size: 3rem;
       color: white;
-      font-size: 4rem;
-      position: relative;
-      overflow: hidden;
+    }
+
+    .work-card:hover .work-image-overlay {
+      opacity: 1;
+    }
+
+    .work-card:hover .work-image-img {
+      transform: scale(1.1);
     }
 
     .work-image::before {
@@ -1361,6 +1353,7 @@
       right: 0;
       bottom: 0;
       background: rgba(0, 0, 0, 0.1);
+      z-index: 3;
     }
 
     .work-content {
@@ -1924,14 +1917,8 @@
       <section id="home" class="profile-section">
         <div class="hero-card">
           <div class="hero-content">
-            <div class="profile-avatar">
-              <div class="profile-image">
-                <i class="fas fa-user"></i>
-              </div>
-            </div>
-            
             <div class="hero-info">
-              <h1 class="main-title">Yuma</h1>
+              <h1 class="main-title">荒木 裕磨</h1>
               <p class="main-subtitle"> Developer & Student</p>
               <p class="main-description">
                 小学生からのPC修理経験、高校時代の古物商での年30万円前後の売上実績を活かして、<br>
@@ -2026,8 +2013,8 @@
               </div>
               <div class="stat-card">
                 <i class="fas fa-store"></i>
-                <h4>古物商売上</h4>
-                <p>年30万円前後目標に活動</p>
+                <h4>古物商</h4>
+                <p>年の売上30万円前後目標に活動</p>
               </div>
               <div class="stat-card">
                 <i class="fas fa-mobile-alt"></i>
@@ -2167,11 +2154,14 @@
           <!-- レシピ管理アプリ -->
           <div class="work-card" onclick="showDetail('recipe-app')">
             <div class="work-image">
-              <i class="fas fa-utensils"></i>
+              <img src="image/FoodRecipeAIapp.jpg" alt="レシピ管理アプリ" class="work-image-img">
+              <div class="work-image-overlay">
+                <i class="fas fa-utensils"></i>
+              </div>
             </div>
             <div class="work-content">
               <h3 class="work-title">Flutter レシピ管理アプリ</h3>
-              <p class="work-subtitle">個人開発 | 2025年</p>
+              <p class="work-subtitle">個人開発 | 2025年 | 制作期間：1ヶ月</p>
               <p class="work-description">
                 AIを活用したレシピ管理アプリ。食材管理、献立提案、音声読み上げなど実用的な機能を搭載。
               </p>
@@ -2186,12 +2176,15 @@
 
           <!-- SyuKatsuApp -->
           <div class="work-card" onclick="showDetail('syukatsu-app')">
-            <div class="work-image" style="background: linear-gradient(45deg, #667eea, #764ba2);">
-              <i class="fas fa-briefcase"></i>
+            <div class="work-image">
+              <img src="./image/SyuKatsuApp.jpg" alt="就活効率化アプリ" class="work-image-img">
+              <div class="work-image-overlay">
+                <i class="fas fa-briefcase"></i>
+              </div>
             </div>
             <div class="work-content">
               <h3 class="work-title">就活効率化アプリ</h3>
-              <p class="work-subtitle">個人開発 | 2025年</p>
+              <p class="work-subtitle">個人開発 | 2025年 | 制作期間：1日</p>
               <p class="work-description">
                 就職活動を効率化するFlutterアプリ。企業管理、選考進捗、ESテンプレートなど就活に必要な機能を統合。
               </p>
@@ -2263,6 +2256,14 @@
       <div class="detail-hero">
         <h1>就活効率化アプリ</h1>
         <p>就職活動を効率化するオールインワンアプリケーション</p>
+        
+        <div class="demo-image-container" style="margin-top: 2rem; text-align: center;">
+          <img 
+            src="./image/SyuKatsuApp.jpg" 
+            alt="SyuKatsuApp スクリーンショット" 
+            style="width: 100%; max-width: 400px; height: auto; border-radius: 16px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.1);">
+          <p style="margin-top: 1rem; color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">動画準備中</p>
+        </div>
       </div>
     </div>
 
@@ -2277,9 +2278,9 @@
           就職活動を始めた際に、企業情報の管理、選考進捗の把握、ES（エントリーシート）の作成・管理など、多くのタスクを別々のツールで管理する煩雑さを感じました。これらの課題を解決し、就活生が効率的に活動できるよう、全ての機能を統合したFlutterアプリを個人開発しました。
         </p>
         <div style="background: linear-gradient(135deg, rgba(0, 188, 212, 0.1) 0%, rgba(0, 229, 255, 0.05) 100%); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #00bcd4; border: 1px solid rgba(0, 188, 212, 0.2); backdrop-filter: blur(10px);">
-          <p style="margin-bottom: 1rem; color: rgba(255, 255, 255, 0.9);"><strong>制作期間：</strong>約2ヶ月</p>
+          <p style="margin-bottom: 1rem; color: rgba(255, 255, 255, 0.9);"><strong>制作期間：</strong>1日</p>
           <p style="margin-bottom: 1rem; color: rgba(255, 255, 255, 0.9);"><strong>開発形態：</strong>個人開発</p>
-          <p style="color: rgba(255, 255, 255, 0.9);"><strong>使用技術：</strong>Flutter / Dart / Provider / Material Design / Local Storage</p>
+          <p style="color: rgba(255, 255, 255, 0.9);"><strong>使用技術：</strong>Flutter / Dart / WebView / Shared Preferences / Material Design</p>
         </div>
       </div>
 
@@ -2291,28 +2292,28 @@
         </h2>
         <div class="feature-grid">
           <div class="feature-item">
-            <h3>🏢 企業管理</h3>
-            <p>企業情報の登録・編集、業界分類、企業規模、勤務地、給与情報などの詳細管理</p>
+            <h3>� ホーム画面・ダッシュボード</h3>
+            <p>今日の予定表示、応募状況のサマリー、直近のスケジュール確認、クイックアクション機能</p>
           </div>
           <div class="feature-item">
-            <h3>📊 選考進捗管理</h3>
-            <p>ES提出、筆記試験、面接など各選考段階の進捗状況をタイムライン形式で管理</p>
+            <h3>� 応募状況管理</h3>
+            <p>エントリー済み/書類選考中/面接中/結果待ち/内定/不合格の状態管理と選考ステップ追跡</p>
           </div>
           <div class="feature-item">
-            <h3>📝 ES管理</h3>
-            <p>エントリーシートのテンプレート作成、企業別カスタマイズ、文字数カウント、データエクスポート</p>
+            <h3>� スケジュール管理</h3>
+            <p>面接日程、説明会、インターン、企業訪問、OB/OG訪問の予定管理とリマインダー機能</p>
           </div>
           <div class="feature-item">
-            <h3>📅 スケジュール管理</h3>
-            <p>説明会、面接、インターンなどの予定をカレンダー形式で管理、リマインダー機能</p>
+            <h3>� メモ機能</h3>
+            <p>企業別メモ管理、企業研究の記録、面接での質問・回答メモ、企業との関連付け</p>
           </div>
           <div class="feature-item">
-            <h3>📈 統計・分析</h3>
-            <p>応募数、通過率、業界別分析など就活状況をグラフで可視化、改善点の発見</p>
+            <h3>� 検索機能</h3>
+            <p>登録済み企業の検索、応募状況での絞り込み、スケジュール検索、メモ内容の全文検索</p>
           </div>
           <div class="feature-item">
-            <h3>🔍 企業検索</h3>
-            <p>業界、規模、勤務地など多様な条件での企業検索、お気に入り登録機能</p>
+            <h3>🌐 WebView統合</h3>
+            <p>企業の公式サイト表示、求人サイトの統合表示、お気に入りサイトの管理とブックマーク</p>
           </div>
         </div>
       </div>
@@ -2327,12 +2328,11 @@
           <span class="tech-item">Flutter</span>
           <span class="tech-item">Dart</span>
           <span class="tech-item">Material Design</span>
-          <span class="tech-item">Provider</span>
-          <span class="tech-item">Local Storage</span>
-          <span class="tech-item">Charts</span>
-          <span class="tech-item">Calendar</span>
-          <span class="tech-item">Local Storage</span>
-          <span class="tech-item">Material Design</span>
+          <span class="tech-item">WebView Flutter</span>
+          <span class="tech-item">URL Launcher</span>
+          <span class="tech-item">Cached Network Image</span>
+          <span class="tech-item">Shared Preferences</span>
+          <span class="tech-item">Share Plus</span>
         </div>
       </div>
 
@@ -2366,6 +2366,40 @@
           <div class="feature-item">
             <h3>🔧 実用性</h3>
             <p>データエクスポート、通知機能など実際の就活で使える機能</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 苦労したこと・学んだこと -->
+      <div class="detail-section">
+        <h2>
+          <i class="fas fa-exclamation-triangle"></i>
+          苦労したこと・学んだこと
+        </h2>
+        <div class="feature-grid">
+          <div class="feature-item" style="border-left: 4px solid #e74c3c;">
+            <h3>📊 データ構造の複雑性</h3>
+            <p>企業情報、選考進捗、ES管理の関連性を効率的に管理する構造設計に悩み、何度も見直しが必要だった</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #e74c3c;">
+            <h3>📱 状態管理の難しさ</h3>
+            <p>複数画面間でのデータ同期とProviderパターンの理解に時間を要し、状態の不整合問題を解決するのに苦労</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #e74c3c;">
+            <h3>🎨 UIの一貫性維持</h3>
+            <p>Material Designガイドラインに従いつつ、就活アプリらしい信頼感を表現するデザインバランスの調整に試行錯誤</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #e74c3c;">
+            <h3>📈 グラフ表示の実装</h3>
+            <p>選考進捗や統計データの視覚化で、適切なグラフライブラリの選択と使い方の習得に時間がかかった</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #e74c3c;">
+            <h3>💾 データ永続化の課題</h3>
+            <p>ローカルストレージでの大量データ管理と検索性能の最適化、データバックアップ機能の実装に苦労</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #e74c3c;">
+            <h3>⏰ 短期開発の制約</h3>
+            <p>1日という短期間での機能実装で、優先順位の判断と最小機能での完成を目指すスコープ調整を学んだ</p>
           </div>
         </div>
       </div>
@@ -2530,6 +2564,40 @@
           <div class="feature-item">
             <h3>🎯 完成度</h3>
             <p>実用的なアプリを一人で完成させた実績と継続的な改善意識</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 苦労したこと・学んだこと -->
+      <div class="detail-section">
+        <h2>
+          <i class="fas fa-exclamation-triangle"></i>
+          苦労したこと・学んだこと
+        </h2>
+        <div class="feature-grid">
+          <div class="feature-item" style="border-left: 4px solid #e74c3c;">
+            <h3>🔥 Firebase認証の実装</h3>
+            <p>Google/Apple認証の設定で、各プラットフォーム固有の設定ファイルや証明書の管理に苦労。エラーメッセージの解読と公式ドキュメントの読み込みで解決</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #e74c3c;">
+            <h3>⚡ 非同期処理の理解</h3>
+            <p>Firestoreとの通信でFutureとStreamの使い分けに混乱。状態管理でのタイミング問題を解決するため、async/awaitの深い理解が必要だった</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #e74c3c;">
+            <h3>🤖 API制限との向き合い方</h3>
+            <p>Gemini APIの呼び出し制限により、過度なリクエストでエラーが発生。適切なキャッシュ機能とリクエスト間隔の調整を実装して解決</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #e74c3c;">
+            <h3>📱 UI/UXの試行錯誤</h3>
+            <p>「使いやすい」レイアウトの模索で何度もデザインを変更。実際に料理をしながらアプリを使用してユーザビリティを検証し改善</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #e74c3c;">
+            <h3>🔧 データ構造の設計</h3>
+            <p>レシピ、食材、ユーザー情報の関係性を効率的に管理する構造設計に悩み、何度もFirestoreのコレクション設計を見直した</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #e74c3c;">
+            <h3>🎯 完璧主義からの脱却</h3>
+            <p>「完璧なアプリを作ろう」とする思いが進捗を妨げることを学習。MVP（最小機能製品）の考え方で段階的な改善を重視するように変化</p>
           </div>
         </div>
       </div>
