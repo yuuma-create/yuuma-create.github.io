@@ -35,6 +35,7 @@
       line-height: 1.6;
       color: var(--text-primary);
       overflow-x: hidden;
+      word-wrap: break-word;
     }
 
     /* ページ切り替え */
@@ -644,6 +645,73 @@
       .code-block {
         padding: 1.5rem;
         margin: 1.5rem 0;
+      }
+    }
+
+    /* 500px以下の詳細ページ対応 */
+    @media (max-width: 500px) {
+      .detail-content {
+        padding: 0 1rem 4rem;
+      }
+
+      .detail-section {
+        padding: 2rem 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .detail-section h2 {
+        font-size: 1.6rem;
+        flex-direction: column;
+        gap: 0.8rem;
+        text-align: center;
+      }
+
+      .detail-section h2 i {
+        font-size: 1.5rem;
+        padding: 0.8rem;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .feature-item {
+        padding: 1.5rem;
+      }
+
+      .feature-item h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .feature-item p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .tech-stack {
+        gap: 0.8rem;
+      }
+
+      .tech-item {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+      }
+
+      .detail-hero h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .detail-hero p {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+      }
+
+      .demo-video-container iframe {
+        height: 450px;
+        margin: 0 -0.5rem;
       }
     }
 
@@ -1585,7 +1653,7 @@
 
     .feature-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
       gap: 2rem;
       margin-top: 2rem;
     }
