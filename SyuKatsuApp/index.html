@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SyuKatsu - 就活管理アプリ</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 0;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 40px;
+        }
+        
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 60px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero .subtitle {
+            font-size: 24px;
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+        
+        .hero .description {
+            font-size: 18px;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .content {
+            padding: 60px 40px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .feature-card {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            border: 2px solid #e2e8f0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: #667eea;
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 40px;
+            color: white;
+        }
+        
+        .feature-card h3 {
+            color: #1f2937;
+            margin-bottom: 16px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        .feature-card p {
+            color: #6b7280;
+            font-size: 16px;
+        }
+        
+        .info-section {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+        
+        .info-section h2 {
+            color: #1f2937;
+            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .info-item {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .info-item h4 {
+            color: #374151;
+            margin-bottom: 8px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .info-item p {
+            color: #6b7280;
+            margin: 0;
+            font-size: 14px;
+        }
+        
+        .links-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .link-button {
+            display: inline-block;
+            padding: 16px 32px;
+            margin: 10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 18px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .link-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .link-button.secondary {
+            background: #6b7280;
+        }
+        
+        .link-button.secondary:hover {
+            box-shadow: 0 8px 20px rgba(107, 114, 128, 0.4);
+        }
+        
+        .footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 40px;
+            margin-top: 40px;
+        }
+        
+        .footer p {
+            margin: 8px 0;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .hero {
+                padding: 40px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero .subtitle {
+                font-size: 20px;
+            }
+            
+            .content {
+                padding: 40px 20px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .info-section {
+                padding: 30px 20px;
+            }
+            
+            .link-button {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <div class="app-icon">📱</div>
+            <h1>SyuKatsu</h1>
+            <p class="subtitle">就活管理アプリ</p>
+            <p class="description">就職活動を効率的に管理するための総合アプリです。企業の応募状況、面接スケジュール、企業サイトのブックマーク機能など、就活に必要な機能を一つのアプリに集約しています。</p>
+        </header>
+
+        <div class="content">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3>応募状況管理</h3>
+                    <p>企業への応募状況を段階別に管理。書類選考、一次面接、最終面接など、進捗を一目で確認できます。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📅</div>
+                    <h3>スケジュール管理</h3>
+                    <p>面接や説明会の予定を一元管理。重要な日程を見逃すことがありません。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔖</div>
+                    <h3>企業サイト管理</h3>
+                    <p>企業サイトをカテゴリ別に整理。興味のある企業の情報に素早くアクセスできます。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>メモ機能</h3>
+                    <p>企業情報や面接メモを記録。後で振り返るときに便利です。</p>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h2>アプリ情報</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h4>バージョン</h4>
+                        <p>1.0.0</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>リリース予定</h4>
+                        <p>2025年7月</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>対応プラットフォーム</h4>
+                        <p>iOS / Android</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>料金</h4>
+                        <p>無料</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>データ保存</h4>
+                        <p>端末内のみ（外部送信なし）</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>開発者</h4>
+                        <p>arakiyuma</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="links-section">
+                <h2>重要な文書</h2>
+                <a href="privacy.html" class="link-button">プライバシーポリシー</a>
+                <a href="terms.html" class="link-button">利用規約</a>
+                <a href="https://github.com/arakiyuma/syukatsu-app" class="link-button secondary">GitHub</a>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2024 arakiyuma. All rights reserved.</p>
+            <p>このアプリは個人の就職活動を支援することを目的としています。</p>
+            <p>最終更新日: 2024年12月</p>
+        </footer>
+    </div>
+</body>
+</html>
