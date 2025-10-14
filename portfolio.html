@@ -3469,7 +3469,7 @@
             <p>スワイプナビゲーション（戻る・進む）、タップでUI表示切り替え、ロングタップメニュー、振動フィードバック</p>
           </div>
           <div class="feature-item">
-            <h3>� 高度なページ管理</h3>
+            <h3>🔗 ページ管理機能</h3>
             <p>ページ共有機能、リロード、タイトル・URL自動取得、新しいタブで開く、履歴保持</p>
           </div>
         </div>
@@ -3624,7 +3624,7 @@
         </div>
 
         <!-- 画像スライダー -->
-        <div class="demo-image-container" style="margin-top: 2rem; position: relative; max-width: 800px; margin-left: auto; margin-right: auto;">
+        <div class="demo-image-container" style="margin-top: 2rem; position: relative; max-width: 1000px; margin-left: auto; margin-right: auto;">
           <div class="image-slider">
             <button class="slider-button slider-button-prev" onclick="changeDataToolSlide(-1)">
               <i class="fas fa-chevron-left"></i>
@@ -3735,7 +3735,7 @@
           <p style="color: rgba(255, 255, 255, 0.85); line-height: 1.6; margin-bottom: 0;">
             本プロジェクトは<strong>個人の学習・研究目的</strong>で開発したプロトタイプです。
             データ分析、可視化技術、GUI設計の習得を目的としており、実運用は行っておりません。
-            サーバーに負荷をかけない設計を心がけ、技術的な学びに焦点を当てた研究プロジェクトです。
+            サーバーに負荷をかけない設計を心がけ、技術的な学びに焦点を当てた学習・研究プロジェクトです。
           </p>
         </div>
       </div>
@@ -3748,14 +3748,17 @@
         </h2>
         <p style="color: rgba(255, 255, 255, 0.85); line-height: 1.8; margin-bottom: 1.5rem;">
           複数のデータソースから価格情報を収集し、統合的に分析・可視化するPythonアプリケーションです。
-          データサイエンスの基礎技術習得を目的とした研究プロジェクトとして開発しました。
+          古物商としての実務経験を活かし、AIの力を借りながら開発した個人学習プロジェクトです。
         </p>
         <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
-          <h3 style="color: rgba(255, 255, 255, 0.95); margin-bottom: 1rem;">開発の動機</h3>
+          <h3 style="color: rgba(255, 255, 255, 0.95); margin-bottom: 1rem;">💡 開発の動機</h3>
+          <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6; margin-bottom: 1rem;">
+            古物商として実際に商品の仕入れ・販売を行う中で、<strong>「目利き」や「市場の読み」</strong>といった
+            経験則に頼っていた部分を、データとロジックに基づいてIT化できないかと考えました。
+          </p>
           <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
-            実務で求められる<strong>データ収集・分析・可視化のスキル</strong>を実践的に学ぶため、
-            実世界のデータを扱うツールの開発に挑戦しました。
-            Python、データ分析ライブラリ、GUI設計など、<strong>データエンジニアリングの基礎技術</strong>を習得することが目的です。
+            AIの力を借りながら、<strong>実務で直面する課題をプログラミングで解決する</strong>経験を通じて、
+            データ収集・分析・可視化の基礎技術を学ぶことができました。
           </p>
         </div>
       </div>
@@ -3862,77 +3865,87 @@
         </div>
       </div>
 
-      <!-- 学んだこと・苦労したこと -->
+      <!-- 学んだこと・開発の実態 -->
       <div class="detail-section">
         <h2>
-          <i class="fas fa-graduation-cap"></i>
-          学んだこと・技術的な挑戦
+          <i class="fas fa-lightbulb"></i>
+          開発アプローチと学んだこと
         </h2>
+        <div style="background: linear-gradient(135deg, rgba(0, 229, 255, 0.1) 0%, rgba(0, 188, 212, 0.05) 100%); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(0, 229, 255, 0.2); margin-bottom: 2rem;">
+          <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.7; margin-bottom: 1rem;">
+            <strong>📌 開発手法について</strong><br>
+            このプロジェクトは<strong>AI（GitHub Copilot / ChatGPT）を活用したバイブコーディング</strong>で開発しました。
+            コード自体の多くはAIが生成していますが、要件定義、設計判断、デバッグ、統合作業は自分で行いました。
+          </p>
+        </div>
         <div class="feature-grid">
-          <div class="feature-item" style="border-left: 4px solid #e74c3c;">
-            <h3>🧩 複雑なデータ構造の設計</h3>
-            <p>複数データソースの統合、データ正規化、欠損値処理など、実践的なデータエンジニアリングを経験。</p>
+          <div class="feature-item" style="border-left: 4px solid #00BCD4;">
+            <h3>🤖 AIとの協働開発</h3>
+            <p>実装の大部分はAIに頼りましたが、「何を作るか」「どう組み合わせるか」の判断は自分で行う経験を得ました。</p>
           </div>
-          <div class="feature-item" style="border-left: 4px solid #e74c3c;">
-            <h3>⚡ 非同期処理と最適化</h3>
-            <p>長時間処理のUX改善、プログレス表示、エラー時のリカバリー戦略の設計が必要でした。</p>
+          <div class="feature-item" style="border-left: 4px solid #00BCD4;">
+            <h3>📚 ライブラリの理解</h3>
+            <p>Selenium、Pandas、Matplotlibなど、実際に動かしながらライブラリの使い方と可能性を学習。</p>
           </div>
-          <div class="feature-item" style="border-left: 4px solid #e74c3c;">
-            <h3>📊 効果的なデータ可視化</h3>
-            <p>ユーザーが直感的に理解できるグラフ設計、色使い、レイアウト最適化を学びました。</p>
+          <div class="feature-item" style="border-left: 4px solid #00BCD4;">
+            <h3>🔍 デバッグ力の向上</h3>
+            <p>AI生成コードのエラー修正を通じて、エラーメッセージの読み方やトラブルシューティング手法を習得。</p>
           </div>
-          <div class="feature-item" style="border-left: 4px solid #e74c3c;">
-            <h3>🎨 GUI設計の難しさ</h3>
-            <p>tkinterの制約の中で使いやすいインターフェースを実現するため、UX設計の重要性を実感。</p>
+          <div class="feature-item" style="border-left: 4px solid #00BCD4;">
+            <h3>🎨 UI/UX設計の試行錯誤</h3>
+            <p>tkinterの制約の中で使いやすいレイアウトを模索。実際に触って改善を繰り返しました。</p>
           </div>
-          <div class="feature-item" style="border-left: 4px solid #e74c3c;">
-            <h3>🔧 保守性の高いコード</h3>
-            <p>モジュール分離、継承設計、ドキュメント整備など、実務レベルのコード品質を意識。</p>
+          <div class="feature-item" style="border-left: 4px solid #00BCD4;">
+            <h3>📝 要件定義の重要性</h3>
+            <p>「何を作りたいか」を明確に言語化しないとAIも良いコードを書けない。仕様を整理する力が必要だと実感。</p>
           </div>
-          <div class="feature-item" style="border-left: 4px solid #e74c3c;">
-            <h3>📐 スケーラビリティ</h3>
-            <p>新しいデータソースの追加、機能拡張を想定した設計パターンの実装が挑戦的でした。</p>
+          <div class="feature-item" style="border-left: 4px solid #00BCD4;">
+            <h3>🔗 統合・結合の難しさ</h3>
+            <p>個別機能はAIで作れても、全体を繋げて動かす部分は自分で考える必要があり、設計力の大切さを学びました。</p>
           </div>
         </div>
       </div>
 
-      <!-- プロジェクトから得た学び -->
+      <!-- このプロジェクトで得た学び -->
       <div class="detail-section">
         <h2>
           <i class="fas fa-star"></i>
-          このプロジェクトで得たスキル
+          このプロジェクトで得た学び
         </h2>
         <div style="background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+          <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6; margin-bottom: 2rem; text-align: center;">
+            <strong>AIをどう使うか・何を作るか考える力</strong>が重要だと実感したプロジェクトです。
+          </p>
           <div class="feature-grid">
             <div style="text-align: center; padding: 1rem;">
-              <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🐍</div>
-              <h4 style="color: #00E5FF; margin-bottom: 0.5rem;">Python開発</h4>
-              <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">OOP設計、エラー処理、<br>型ヒント活用</p>
+              <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🤖</div>
+              <h4 style="color: #00E5FF; margin-bottom: 0.5rem;">AI活用力</h4>
+              <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">効果的なプロンプト、<br>コード理解・検証</p>
             </div>
             <div style="text-align: center; padding: 1rem;">
-              <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📊</div>
-              <h4 style="color: #00E5FF; margin-bottom: 0.5rem;">データ分析</h4>
-              <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">Pandas操作、統計処理、<br>データクレンジング</p>
-            </div>
-            <div style="text-align: center; padding: 1rem;">
-              <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📈</div>
-              <h4 style="color: #00E5FF; margin-bottom: 0.5rem;">可視化技術</h4>
-              <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">Matplotlib、グラフ設計、<br>UX配慮</p>
-            </div>
-            <div style="text-align: center; padding: 1rem;">
-              <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🖥️</div>
-              <h4 style="color: #00E5FF; margin-bottom: 0.5rem;">GUI開発</h4>
-              <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">tkinter、イベント駆動、<br>状態管理</p>
-            </div>
-            <div style="text-align: center; padding: 1rem;">
-              <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🏗️</div>
-              <h4 style="color: #00E5FF; margin-bottom: 0.5rem;">設計パターン</h4>
-              <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">継承、抽象化、<br>拡張性設計</p>
+              <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📝</div>
+              <h4 style="color: #00E5FF; margin-bottom: 0.5rem;">要件定義</h4>
+              <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">課題の言語化、<br>機能の具体化</p>
             </div>
             <div style="text-align: center; padding: 1rem;">
               <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🔍</div>
-              <h4 style="color: #00E5FF; margin-bottom: 0.5rem;">問題解決</h4>
-              <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">デバッグ技術、最適化、<br>実装戦略</p>
+              <h4 style="color: #00E5FF; margin-bottom: 0.5rem;">デバッグ</h4>
+              <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">エラー解読、<br>原因特定・修正</p>
+            </div>
+            <div style="text-align: center; padding: 1rem;">
+              <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🛠️</div>
+              <h4 style="color: #00E5FF; margin-bottom: 0.5rem;">技術理解</h4>
+              <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">Pythonライブラリ、<br>データ分析の基礎</p>
+            </div>
+            <div style="text-align: center; padding: 1rem;">
+              <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🏗️</div>
+              <h4 style="color: #00E5FF; margin-bottom: 0.5rem;">統合設計</h4>
+              <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">モジュール結合、<br>全体構成の把握</p>
+            </div>
+            <div style="text-align: center; padding: 1rem;">
+              <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🧠</div>
+              <h4 style="color: #00E5FF; margin-bottom: 0.5rem;">問題解決思考</h4>
+              <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">課題分解、<br>解決策の検討</p>
             </div>
           </div>
         </div>
