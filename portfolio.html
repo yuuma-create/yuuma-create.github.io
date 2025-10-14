@@ -1319,6 +1319,298 @@
       }
     }
 
+    /* 画像スライダー */
+    .image-slider {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .slider-images {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 aspect ratio */
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .slider-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      pointer-events: none;
+    }
+
+    .slider-image.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .slider-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 229, 255, 0.2);
+      border: 2px solid rgba(0, 229, 255, 0.5);
+      color: #00E5FF;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+    }
+
+    .slider-button:hover {
+      background: rgba(0, 229, 255, 0.4);
+      border-color: #00E5FF;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .slider-button-prev {
+      left: 10px;
+    }
+
+    .slider-button-next {
+      right: 10px;
+    }
+
+    .slider-button i {
+      font-size: 1.2rem;
+    }
+
+    .slider-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 1rem;
+    }
+
+    .slider-indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .slider-indicator:hover {
+      background: rgba(0, 229, 255, 0.5);
+    }
+
+    .slider-indicator.active {
+      background: #00E5FF;
+      width: 12px;
+      height: 12px;
+      border-color: rgba(0, 229, 255, 0.3);
+    }
+
+    /* スライダーのレスポンシブ対応 */
+    @media (max-width: 768px) {
+      .slider-button {
+        width: 40px;
+        height: 40px;
+      }
+
+      .slider-button i {
+        font-size: 1rem;
+      }
+
+      .slider-button-prev {
+        left: 5px;
+      }
+
+      .slider-button-next {
+        right: 5px;
+      }
+
+      .slider-indicator {
+        width: 8px;
+        height: 8px;
+      }
+
+      .slider-indicator.active {
+        width: 10px;
+        height: 10px;
+      }
+    }
+
+    /* 画像拡大モーダル */
+    .image-modal {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .image-modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      color: #fff;
+      font-size: 50px;
+      font-weight: 300;
+      cursor: pointer;
+      z-index: 10001;
+      transition: color 0.3s ease, transform 0.3s ease;
+      line-height: 1;
+    }
+
+    .modal-close:hover {
+      color: #00E5FF;
+      transform: rotate(90deg);
+    }
+
+    .modal-content-wrapper {
+      max-width: 95%;
+      max-height: 95%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: zoomIn 0.3s ease;
+    }
+
+    .modal-image {
+      max-width: 100%;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 0 50px rgba(0, 229, 255, 0.3);
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-caption {
+      color: #fff;
+      font-size: 1rem;
+      text-align: center;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: rgba(0, 229, 255, 0.2);
+      border-radius: 8px;
+      backdrop-filter: blur(10px);
+    }
+
+    .modal-counter {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    /* モーダル内のナビゲーションボタン */
+    .modal-nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 229, 255, 0.3);
+      border: 2px solid rgba(0, 229, 255, 0.6);
+      color: #00E5FF;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 10002;
+      backdrop-filter: blur(10px);
+    }
+
+    .modal-nav-button:hover {
+      background: rgba(0, 229, 255, 0.5);
+      border-color: #00E5FF;
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+    }
+
+    .modal-nav-prev {
+      left: 30px;
+    }
+
+    .modal-nav-next {
+      right: 30px;
+    }
+
+    .modal-nav-button i {
+      font-size: 1.5rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* モーダルのレスポンシブ対応 */
+    @media (max-width: 768px) {
+      .modal-close {
+        top: 10px;
+        right: 20px;
+        font-size: 40px;
+      }
+
+      .modal-image {
+        max-height: 80vh;
+      }
+
+      .modal-caption {
+        font-size: 0.9rem;
+        margin-top: 15px;
+      }
+
+      .modal-nav-button {
+        width: 50px;
+        height: 50px;
+      }
+
+      .modal-nav-button i {
+        font-size: 1.2rem;
+      }
+
+      .modal-nav-prev {
+        left: 10px;
+      }
+
+      .modal-nav-next {
+        right: 10px;
+      }
+    }
+
     /* メインのコンタクトセクション */
     .contact-section {
       width: 100%;
@@ -2226,7 +2518,7 @@
           
           <div class="stats-grid">
             <div class="stat-item">
-              <span class="stat-number">4+</span>
+              <span class="stat-number">5+</span>
               <span class="stat-label">プロジェクト</span>
             </div>
             <div class="stat-item">
@@ -2495,6 +2787,30 @@
               </div>
             </div>
           </div>
+
+          <!-- Data Analysis Tool -->
+          <div class="work-card" onclick="showDetail('data-analysis-tool')">
+            <div class="work-image">
+              <img src="./image/rakuraku_kobutsu_search_py1.png" alt="価格データ分析ツール" class="work-image-img">
+              <div class="work-image-overlay">
+                <i class="fas fa-chart-line"></i>
+              </div>
+            </div>
+            <div class="work-content">
+              <h3 class="work-title">価格データ分析ツール</h3>
+              <p class="work-subtitle">個人研究 | 2025年 | 制作期間：1週間</p>
+              <p class="work-description">
+                複数データソースからの価格情報収集・分析を自動化する研究プロトタイプ。データ可視化とGUI設計の学習を目的とした個人プロジェクト。
+              </p>
+              <div class="work-tags">
+                <span class="work-tag">Python</span>
+                <span class="work-tag">Data Analysis</span>
+                <span class="work-tag">Matplotlib</span>
+                <span class="work-tag">tkinter</span>
+                <span class="work-tag">Selenium</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -2504,8 +2820,32 @@
         <p class="section-subtitle">最新の更新情報・開発状況</p>
         
         <div class="news-container">
-          <!-- ポートフォリオサイト更新 -->
+          <!-- ポートフォリオサイト更新 (2025.10.14) -->
           <div class="news-item featured">
+            <div class="news-date">
+              <span class="date">2025.10.14</span>
+              <span class="category update">更新</span>
+            </div>
+            <div class="news-content">
+              <h3 class="news-title">
+                <i class="fas fa-chart-line"></i>
+                データ分析ツールをポートフォリオに追加
+              </h3>
+              <p class="news-description">
+                Python製の価格データ分析ツールを新規追加。複数データソースからの情報収集・分析・可視化機能を実装した研究プロジェクトを公開しました。
+                8枚のスクリーンショットで詳細機能を紹介し、画像拡大・スライダー機能も実装。
+              </p>
+              <div class="news-tags">
+                <span class="news-tag">Python</span>
+                <span class="news-tag">Data Analysis</span>
+                <span class="news-tag">Matplotlib</span>
+                <span class="news-tag">Portfolio Update</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ポートフォリオサイト更新 (2025.07.18) -->
+          <div class="news-item">
             <div class="news-date">
               <span class="date">2025.07.18</span>
               <span class="category update">更新</span>
@@ -3261,6 +3601,367 @@
     </div>
   </div>
 
+  <!-- データ分析ツール詳細ページ -->
+  <div id="data-analysis-tool" class="page detail-page">
+    <button class="back-button" onclick="showMain(event)">
+      <i class="fas fa-arrow-left"></i>
+      戻る
+    </button>
+
+    <div class="detail-hero">
+      <div class="detail-hero-content">
+        <h1>価格データ分析ツール</h1>
+        <p class="detail-hero-subtitle">研究プロトタイプ | Python | 2025年</p>
+        
+        <div class="tech-stack">
+          <span class="tech-item">Python</span>
+          <span class="tech-item">Selenium</span>
+          <span class="tech-item">Pandas</span>
+          <span class="tech-item">Matplotlib</span>
+          <span class="tech-item">tkinter</span>
+          <span class="tech-item">Data Visualization</span>
+          <span class="tech-item">CSV</span>
+        </div>
+
+        <!-- 画像スライダー -->
+        <div class="demo-image-container" style="margin-top: 2rem; position: relative; max-width: 800px; margin-left: auto; margin-right: auto;">
+          <div class="image-slider">
+            <button class="slider-button slider-button-prev" onclick="changeDataToolSlide(-1)">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <div class="slider-images">
+              <img 
+                src="./image/rakuraku_kobutsu_search_py1.png" 
+                alt="データ分析ツール - 単品検索" 
+                class="slider-image active"
+                data-slide="1"
+                onclick="openImageModal(this.src, this.alt)"
+                style="cursor: zoom-in;">
+              <img 
+                src="./image/rakuraku_kobutsu_search_py2.png" 
+                alt="データ分析ツール - 統計情報" 
+                class="slider-image"
+                data-slide="2"
+                onclick="openImageModal(this.src, this.alt)"
+                style="cursor: zoom-in;">
+              <img 
+                src="./image/rakuraku_kobutsu_search_py3.png" 
+                alt="データ分析ツール - 一括検索" 
+                class="slider-image"
+                data-slide="3"
+                onclick="openImageModal(this.src, this.alt)"
+                style="cursor: zoom-in;">
+              <img 
+                src="./image/rakuraku_kobutsu_search_py4.png" 
+                alt="データ分析ツール - 検索結果" 
+                class="slider-image"
+                data-slide="4"
+                onclick="openImageModal(this.src, this.alt)"
+                style="cursor: zoom-in;">
+              <img 
+                src="./image/rakuraku_kobutsu_search_py5.png" 
+                alt="データ分析ツール - 価格比較" 
+                class="slider-image"
+                data-slide="5"
+                onclick="openImageModal(this.src, this.alt)"
+                style="cursor: zoom-in;">
+              <img 
+                src="./image/rakuraku_kobutsu_search_py6.png" 
+                alt="データ分析ツール - 利益分析" 
+                class="slider-image"
+                data-slide="6"
+                onclick="openImageModal(this.src, this.alt)"
+                style="cursor: zoom-in;">
+              <img 
+                src="./image/rakuraku_kobutsu_search_py7.png" 
+                alt="データ分析ツール - 機会探索" 
+                class="slider-image"
+                data-slide="7"
+                onclick="openImageModal(this.src, this.alt)"
+                style="cursor: zoom-in;">
+              <img 
+                src="./image/rakuraku_kobutsu_search_py8.png" 
+                alt="データ分析ツール - グラフ" 
+                class="slider-image"
+                data-slide="8"
+                onclick="openImageModal(this.src, this.alt)"
+                style="cursor: zoom-in;">
+            </div>
+            
+            <button class="slider-button slider-button-next" onclick="changeDataToolSlide(1)">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+          
+          <div class="slider-indicators">
+            <span class="slider-indicator active" onclick="setDataToolSlide(1)"></span>
+            <span class="slider-indicator" onclick="setDataToolSlide(2)"></span>
+            <span class="slider-indicator" onclick="setDataToolSlide(3)"></span>
+            <span class="slider-indicator" onclick="setDataToolSlide(4)"></span>
+            <span class="slider-indicator" onclick="setDataToolSlide(5)"></span>
+            <span class="slider-indicator" onclick="setDataToolSlide(6)"></span>
+            <span class="slider-indicator" onclick="setDataToolSlide(7)"></span>
+            <span class="slider-indicator" onclick="setDataToolSlide(8)"></span>
+          </div>
+          
+          <!-- 画像の説明 -->
+          <div style="margin-top: 1.5rem; text-align: center;">
+            <p style="color: rgba(0, 229, 255, 0.8); font-size: 0.9rem; margin-bottom: 1rem;">
+              <i class="fas fa-search-plus"></i> 画像をクリックで拡大表示
+            </p>
+            <p id="dataToolSlideDescription" style="color: rgba(255, 255, 255, 0.9); font-size: 1rem; line-height: 1.6; margin-bottom: 0.5rem; min-height: 3em;">
+              複数キーワードの一括検索機能。キーワードリストをファイルで管理し、複数のデータソースから価格情報を一度に収集できます。
+            </p>
+            <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.85rem;">
+              <span id="dataToolSlideCounter">1 / 8</span>
+            </p>
+            <p style="color: rgba(255, 152, 0, 0.9); font-size: 0.9rem; margin-top: 0.5rem; background: rgba(255, 152, 0, 0.1); padding: 0.5rem 1rem; border-radius: 8px; display: inline-block;">
+              ※ 本プロジェクトは個人の学習・研究目的で開発したプロトタイプです
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-content">
+      <!-- 重要な注記 -->
+      <div class="detail-section">
+        <div style="background: linear-gradient(135deg, rgba(255, 152, 0, 0.15) 0%, rgba(255, 87, 34, 0.1) 100%); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #FF9800; border: 1px solid rgba(255, 152, 0, 0.3); backdrop-filter: blur(10px); margin-bottom: 2rem;">
+          <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+            <i class="fas fa-info-circle" style="color: #FF9800; margin-right: 0.75rem; font-size: 1.2rem;"></i>
+            <h3 style="margin: 0; color: rgba(255, 255, 255, 0.95); font-size: 1.1rem;">プロジェクトについて</h3>
+          </div>
+          <p style="color: rgba(255, 255, 255, 0.85); line-height: 1.6; margin-bottom: 0;">
+            本プロジェクトは<strong>個人の学習・研究目的</strong>で開発したプロトタイプです。
+            データ分析、可視化技術、GUI設計の習得を目的としており、実運用は行っておりません。
+            サーバーに負荷をかけない設計を心がけ、技術的な学びに焦点を当てた研究プロジェクトです。
+          </p>
+        </div>
+      </div>
+
+      <!-- プロジェクト概要 -->
+      <div class="detail-section">
+        <h2>
+          <i class="fas fa-lightbulb"></i>
+          プロジェクト概要
+        </h2>
+        <p style="color: rgba(255, 255, 255, 0.85); line-height: 1.8; margin-bottom: 1.5rem;">
+          複数のデータソースから価格情報を収集し、統合的に分析・可視化するPythonアプリケーションです。
+          データサイエンスの基礎技術習得を目的とした研究プロジェクトとして開発しました。
+        </p>
+        <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+          <h3 style="color: rgba(255, 255, 255, 0.95); margin-bottom: 1rem;">開発の動機</h3>
+          <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
+            実務で求められる<strong>データ収集・分析・可視化のスキル</strong>を実践的に学ぶため、
+            実世界のデータを扱うツールの開発に挑戦しました。
+            Python、データ分析ライブラリ、GUI設計など、<strong>データエンジニアリングの基礎技術</strong>を習得することが目的です。
+          </p>
+        </div>
+      </div>
+
+      <!-- 技術的特徴 -->
+      <div class="detail-section">
+        <h2>
+          <i class="fas fa-cogs"></i>
+          技術的特徴
+        </h2>
+        <div class="feature-grid">
+          <div class="feature-item">
+            <h3>🔍 データ収集の自動化</h3>
+            <p>Seleniumを使用したWebデータの自動取得システム。動的ページの処理、待機戦略、エラーハンドリングを実装。</p>
+          </div>
+          <div class="feature-item">
+            <h3>📊 データ分析基盤</h3>
+            <p>Pandasによるデータクレンジング、集計、統計分析。複数データソースの統合とクロス集計の実装。</p>
+          </div>
+          <div class="feature-item">
+            <h3>📈 可視化システム</h3>
+            <p>Matplotlibで4種類のグラフを実装。価格分布、プラットフォーム比較、利益マップ、ランキング表示。</p>
+          </div>
+          <div class="feature-item">
+            <h3>🖥️ GUIアプリケーション</h3>
+            <p>tkinterによる直感的なインターフェース設計。タブ構成、リアルタイム更新、フィルタリング機能を実装。</p>
+          </div>
+          <div class="feature-item">
+            <h3>💾 データ永続化</h3>
+            <p>CSV形式でのデータ保存・読み込み。キーワードリストのファイル管理システムを構築。</p>
+          </div>
+          <div class="feature-item">
+            <h3>🔧 設計パターンの習得</h3>
+            <p>スクレイパーの基底クラス設計、継承による拡張性、モジュール分離などOOP設計を実践。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 実装した機能 -->
+      <div class="detail-section">
+        <h2>
+          <i class="fas fa-list-check"></i>
+          実装した機能
+        </h2>
+        <div class="feature-grid">
+          <div class="feature-item" style="border-left: 4px solid #00BCD4;">
+            <h3>📋 一括データ収集</h3>
+            <p>複数キーワードの一括処理、プラットフォーム横断検索、取得件数の柔軟な設定が可能。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #00BCD4;">
+            <h3>💰 価格分析機能</h3>
+            <p>平均価格算出、価格差の抽出、利益率計算、最安値・最高値の自動検出を実装。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #00BCD4;">
+            <h3>🎯 高度なフィルタリング</h3>
+            <p>プラットフォーム選択、価格範囲指定、データ件数による絞り込みが可能。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #00BCD4;">
+            <h3>📊 4種類のグラフ</h3>
+            <p>プラットフォーム比較、利益マップ、価格分布ヒストグラム、Top10ランキング。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #00BCD4;">
+            <h3>📁 ファイル管理システム</h3>
+            <p>キーワードリストのフォルダ管理、ファイル作成・編集・保存の統合インターフェース。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #00BCD4;">
+            <h3>💾 データ保存・読み込み</h3>
+            <p>検索結果のCSV出力、過去データの再読み込み、分析結果の永続化。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 技術スタック -->
+      <div class="detail-section">
+        <h2>
+          <i class="fas fa-layer-group"></i>
+          使用技術・ライブラリ
+        </h2>
+        <div class="feature-grid">
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(0, 188, 212, 0.1) 0%, rgba(0, 150, 136, 0.05) 100%);">
+            <h3>🐍 Python 3.8+</h3>
+            <p>メイン開発言語。非同期処理、例外処理、型ヒントを活用した堅牢なコード設計。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.1) 0%, rgba(139, 195, 74, 0.05) 100%);">
+            <h3>🌐 Selenium</h3>
+            <p>Webデータ取得の自動化。ChromeDriver連携、動的コンテンツ対応、要素待機戦略。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(33, 150, 243, 0.1) 0%, rgba(3, 169, 244, 0.05) 100%);">
+            <h3>📊 Pandas</h3>
+            <p>データフレーム操作、統計分析、データクレンジング、集計処理の実装。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(255, 152, 0, 0.1) 0%, rgba(255, 87, 34, 0.05) 100%);">
+            <h3>📈 Matplotlib</h3>
+            <p>グラフ生成、データ可視化、日本語フォント対応、カスタマイズされたチャート設計。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(156, 39, 176, 0.1) 0%, rgba(103, 58, 183, 0.05) 100%);">
+            <h3>🖥️ tkinter</h3>
+            <p>GUIアプリケーション開発。タブウィジェット、イベント処理、リアルタイムデータ更新。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(233, 30, 99, 0.1) 0%, rgba(244, 67, 54, 0.05) 100%);">
+            <h3>📁 CSV / File I/O</h3>
+            <p>データ永続化、ファイル管理、エンコーディング処理、エラーハンドリング。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 学んだこと・苦労したこと -->
+      <div class="detail-section">
+        <h2>
+          <i class="fas fa-graduation-cap"></i>
+          学んだこと・技術的な挑戦
+        </h2>
+        <div class="feature-grid">
+          <div class="feature-item" style="border-left: 4px solid #e74c3c;">
+            <h3>🧩 複雑なデータ構造の設計</h3>
+            <p>複数データソースの統合、データ正規化、欠損値処理など、実践的なデータエンジニアリングを経験。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #e74c3c;">
+            <h3>⚡ 非同期処理と最適化</h3>
+            <p>長時間処理のUX改善、プログレス表示、エラー時のリカバリー戦略の設計が必要でした。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #e74c3c;">
+            <h3>📊 効果的なデータ可視化</h3>
+            <p>ユーザーが直感的に理解できるグラフ設計、色使い、レイアウト最適化を学びました。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #e74c3c;">
+            <h3>🎨 GUI設計の難しさ</h3>
+            <p>tkinterの制約の中で使いやすいインターフェースを実現するため、UX設計の重要性を実感。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #e74c3c;">
+            <h3>🔧 保守性の高いコード</h3>
+            <p>モジュール分離、継承設計、ドキュメント整備など、実務レベルのコード品質を意識。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #e74c3c;">
+            <h3>📐 スケーラビリティ</h3>
+            <p>新しいデータソースの追加、機能拡張を想定した設計パターンの実装が挑戦的でした。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- プロジェクトから得た学び -->
+      <div class="detail-section">
+        <h2>
+          <i class="fas fa-star"></i>
+          このプロジェクトで得たスキル
+        </h2>
+        <div style="background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+          <div class="feature-grid">
+            <div style="text-align: center; padding: 1rem;">
+              <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🐍</div>
+              <h4 style="color: #00E5FF; margin-bottom: 0.5rem;">Python開発</h4>
+              <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">OOP設計、エラー処理、<br>型ヒント活用</p>
+            </div>
+            <div style="text-align: center; padding: 1rem;">
+              <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📊</div>
+              <h4 style="color: #00E5FF; margin-bottom: 0.5rem;">データ分析</h4>
+              <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">Pandas操作、統計処理、<br>データクレンジング</p>
+            </div>
+            <div style="text-align: center; padding: 1rem;">
+              <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📈</div>
+              <h4 style="color: #00E5FF; margin-bottom: 0.5rem;">可視化技術</h4>
+              <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">Matplotlib、グラフ設計、<br>UX配慮</p>
+            </div>
+            <div style="text-align: center; padding: 1rem;">
+              <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🖥️</div>
+              <h4 style="color: #00E5FF; margin-bottom: 0.5rem;">GUI開発</h4>
+              <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">tkinter、イベント駆動、<br>状態管理</p>
+            </div>
+            <div style="text-align: center; padding: 1rem;">
+              <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🏗️</div>
+              <h4 style="color: #00E5FF; margin-bottom: 0.5rem;">設計パターン</h4>
+              <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">継承、抽象化、<br>拡張性設計</p>
+            </div>
+            <div style="text-align: center; padding: 1rem;">
+              <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🔍</div>
+              <h4 style="color: #00E5FF; margin-bottom: 0.5rem;">問題解決</h4>
+              <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">デバッグ技術、最適化、<br>実装戦略</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 画像拡大モーダル -->
+  <div id="imageModal" class="image-modal" onclick="closeImageModal(event)">
+    <span class="modal-close" onclick="closeImageModal(event)">&times;</span>
+    
+    <!-- 左矢印ボタン -->
+    <button class="modal-nav-button modal-nav-prev" onclick="changeModalSlide(event, -1)">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    
+    <!-- 画像コンテンツ -->
+    <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+      <img id="modalImage" class="modal-image" src="" alt="">
+      <div id="modalCaption" class="modal-caption"></div>
+      <div class="modal-counter" id="modalCounter"></div>
+    </div>
+    
+    <!-- 右矢印ボタン -->
+    <button class="modal-nav-button modal-nav-next" onclick="changeModalSlide(event, 1)">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+
   <script>
     // グローバル変数の初期化
     let isDetailPage = false;
@@ -3517,6 +4218,203 @@
         }
       });
     }
+
+    // 画像スライダー関数
+    let currentDataToolSlide = 1;
+    const totalDataToolSlides = 8;
+
+    // 各スライドの説明文
+    const slideDescriptions = {
+      1: '単品検索画面。キーワードを入力して即座に価格情報を取得し、分析・可視化が可能です。',
+      2: '取得した情報の統計情報表示。平均価格、最高値・最低値、データ件数などの基本統計量を一覧で確認できます。',
+      3: '複数キーワードの一括検索機能。キーワードリストをファイルで管理し、複数のデータソースから価格情報を一度に収集できます。',
+      4: '検索結果の詳細表示。キーワードごとに各プラットフォームの価格情報を一覧表示し、ソートやフィルタリングが可能です。',
+      5: '複数プラットフォームの価格比較表。キーワードごとに各プラットフォームの平均価格を横断比較し、最適な仕入れ先・販売先を特定します。',
+      6: '利益分析機能。プラットフォーム間の価格差から予想利益を自動計算し、ランキング形式で表示。利益率も同時に確認できます。',
+      7: '仕入れ・販売の機会探索。価格差が大きいキーワードを抽出し、適切な仕入れ・販売の機会を提案します。',
+      8: 'グラフ表示機能。価格分布ヒストグラム、プラットフォーム比較グラフ、利益ランキングなど、多様なグラフでデータを可視化します。'
+    };
+
+    function changeDataToolSlide(direction) {
+      currentDataToolSlide += direction;
+      
+      if (currentDataToolSlide > totalDataToolSlides) {
+        currentDataToolSlide = 1;
+      } else if (currentDataToolSlide < 1) {
+        currentDataToolSlide = totalDataToolSlides;
+      }
+      
+      updateDataToolSlider();
+    }
+
+    function setDataToolSlide(slideNumber) {
+      currentDataToolSlide = slideNumber;
+      updateDataToolSlider();
+    }
+
+    function updateDataToolSlider() {
+      // 画像の表示/非表示を切り替え
+      const images = document.querySelectorAll('#data-analysis-tool .slider-image');
+      images.forEach((img, index) => {
+        if (index + 1 === currentDataToolSlide) {
+          img.classList.add('active');
+        } else {
+          img.classList.remove('active');
+        }
+      });
+
+      // インジケーターの更新
+      const indicators = document.querySelectorAll('#data-analysis-tool .slider-indicator');
+      indicators.forEach((indicator, index) => {
+        if (index + 1 === currentDataToolSlide) {
+          indicator.classList.add('active');
+        } else {
+          indicator.classList.remove('active');
+        }
+      });
+
+      // カウンターの更新
+      const counter = document.getElementById('dataToolSlideCounter');
+      if (counter) {
+        counter.textContent = `${currentDataToolSlide} / ${totalDataToolSlides}`;
+      }
+
+      // 説明文の更新
+      const description = document.getElementById('dataToolSlideDescription');
+      if (description) {
+        description.textContent = slideDescriptions[currentDataToolSlide];
+      }
+    }
+
+    // キーボード操作のサポート（データツールページのみ、モーダルが開いていない時）
+    document.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('imageModal');
+      const dataToolPage = document.getElementById('data-analysis-tool');
+      
+      // モーダルが開いている場合はスキップ
+      if (modal && modal.classList.contains('active')) {
+        return;
+      }
+      
+      // データツールページでのみキーボード操作を有効化
+      if (dataToolPage && dataToolPage.classList.contains('active')) {
+        if (e.key === 'ArrowLeft') {
+          changeDataToolSlide(-1);
+        } else if (e.key === 'ArrowRight') {
+          changeDataToolSlide(1);
+        }
+      }
+    });
+
+    // 画像拡大モーダル関数
+    const modalImageSources = [
+      './image/rakuraku_kobutsu_search_py1.png',
+      './image/rakuraku_kobutsu_search_py2.png',
+      './image/rakuraku_kobutsu_search_py3.png',
+      './image/rakuraku_kobutsu_search_py4.png',
+      './image/rakuraku_kobutsu_search_py5.png',
+      './image/rakuraku_kobutsu_search_py6.png',
+      './image/rakuraku_kobutsu_search_py7.png',
+      './image/rakuraku_kobutsu_search_py8.png'
+    ];
+
+    const modalImageAlts = [
+      'データ分析ツール - 単品検索',
+      'データ分析ツール - 統計情報',
+      'データ分析ツール - 一括検索',
+      'データ分析ツール - 検索結果',
+      'データ分析ツール - 価格比較',
+      'データ分析ツール - 利益分析',
+      'データ分析ツール - 機会探索',
+      'データ分析ツール - グラフ表示'
+    ];
+
+    let currentModalSlide = 0;
+
+    function openImageModal(imageSrc, imageAlt) {
+      // 現在の画像のインデックスを取得
+      currentModalSlide = modalImageSources.indexOf(imageSrc);
+      if (currentModalSlide === -1) currentModalSlide = 0;
+
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImage');
+      const caption = document.getElementById('modalCaption');
+      const counter = document.getElementById('modalCounter');
+      
+      modal.classList.add('active');
+      modalImg.src = imageSrc;
+      modalImg.alt = imageAlt;
+      caption.textContent = imageAlt;
+      counter.textContent = `${currentModalSlide + 1} / ${modalImageSources.length}`;
+      
+      // 戻るボタンを非表示
+      const backButtons = document.querySelectorAll('.back-button');
+      backButtons.forEach(btn => btn.style.display = 'none');
+      
+      // bodyのスクロールを無効化
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeImageModal(event) {
+      // イベントがある場合は伝播を止める
+      if (event) {
+        event.stopPropagation();
+      }
+      
+      const modal = document.getElementById('imageModal');
+      modal.classList.remove('active');
+      
+      // 戻るボタンを再表示
+      const backButtons = document.querySelectorAll('.back-button');
+      backButtons.forEach(btn => btn.style.display = 'flex');
+      
+      // bodyのスクロールを有効化
+      document.body.style.overflow = 'auto';
+    }
+
+    function changeModalSlide(event, direction) {
+      // イベントの伝播を止める（モーダルが閉じないように）
+      event.stopPropagation();
+      
+      currentModalSlide += direction;
+      
+      // ループ処理
+      if (currentModalSlide >= modalImageSources.length) {
+        currentModalSlide = 0;
+      } else if (currentModalSlide < 0) {
+        currentModalSlide = modalImageSources.length - 1;
+      }
+      
+      // 画像と説明を更新
+      const modalImg = document.getElementById('modalImage');
+      const caption = document.getElementById('modalCaption');
+      const counter = document.getElementById('modalCounter');
+      
+      // フェードアウト・フェードイン効果
+      modalImg.style.opacity = '0';
+      
+      setTimeout(() => {
+        modalImg.src = modalImageSources[currentModalSlide];
+        modalImg.alt = modalImageAlts[currentModalSlide];
+        caption.textContent = modalImageAlts[currentModalSlide];
+        counter.textContent = `${currentModalSlide + 1} / ${modalImageSources.length}`;
+        modalImg.style.opacity = '1';
+      }, 150);
+    }
+
+    // ESCキーでモーダルを閉じる、矢印キーで画像切り替え
+    document.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('imageModal');
+      if (modal.classList.contains('active')) {
+        if (e.key === 'Escape') {
+          closeImageModal();
+        } else if (e.key === 'ArrowLeft') {
+          changeModalSlide(e, -1);
+        } else if (e.key === 'ArrowRight') {
+          changeModalSlide(e, 1);
+        }
+      }
+    });
 
     // ページ読み込み時の初期化
     document.addEventListener('DOMContentLoaded', () => {
