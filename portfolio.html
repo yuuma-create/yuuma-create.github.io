@@ -1127,6 +1127,11 @@
       letter-spacing: 0.5px;
     }
 
+    .category.release {
+      background: linear-gradient(135deg, #FF6B6B 0%, #EE5A24 100%);
+      color: white;
+    }
+
     .category.testflight {
       background: linear-gradient(135deg, #4CAF50 0%, #8BC34A 100%);
       color: white;
@@ -2609,6 +2614,15 @@
             </div>
             <div class="skill-list">
               <div class="skill-category">
+                <h4>Web開発</h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">Next.js 14</span>
+                  <span class="skill-tag">TypeScript</span>
+                  <span class="skill-tag">React</span>
+                  <span class="skill-tag">Tailwind CSS</span>
+                </div>
+              </div>
+              <div class="skill-category">
                 <h4>モバイル開発</h4>
                 <div class="skill-tags">
                   <span class="skill-tag">Flutter</span>
@@ -2622,6 +2636,14 @@
                   <span class="skill-tag">Gemini API</span>
                   <span class="skill-tag">ChatGPT</span>
                   <span class="skill-tag">TTS</span>
+                </div>
+              </div>
+              <div class="skill-category">
+                <h4>データ分析</h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">Python</span>
+                  <span class="skill-tag">Pandas</span>
+                  <span class="skill-tag">Matplotlib</span>
                 </div>
               </div>
               <div class="skill-category">
@@ -2718,6 +2740,30 @@
       <section id="works" class="works-section">
         <h2 class="works-title">Works</h2>
         <div class="works-grid">
+          <!-- Memoia - AI駆動型メモアプリ -->
+          <div class="work-card" onclick="showDetail('memoia-app')">
+            <div class="work-image">
+              <img src="./image/memoia.png" alt="Memoia - AI駆動型メモアプリ" class="work-image-img">
+              <div class="work-image-overlay">
+                <i class="fas fa-brain"></i>
+              </div>
+            </div>
+            <div class="work-content">
+              <h3 class="work-title">Memoia - AI駆動型メモアプリ</h3>
+              <p class="work-subtitle">個人開発 | 2025年 | 制作期間：2週間</p>
+              <p class="work-description">
+                AIが目的を推測し、最適なUI・構造を自動生成する次世代メモアプリ。テーブル自動生成、動的レイアウト提案、直感的なブロックエディタを実装。
+              </p>
+              <div class="work-tags">
+                <span class="work-tag">Next.js 14</span>
+                <span class="work-tag">TypeScript</span>
+                <span class="work-tag">Firebase</span>
+                <span class="work-tag">Gemini / ChatGPT API</span>
+                <span class="work-tag">Tailwind CSS</span>
+              </div>
+            </div>
+          </div>
+
           <!-- レシピ管理アプリ -->
           <div class="work-card" onclick="showDetail('recipe-app')">
             <div class="work-image">
@@ -2820,8 +2866,33 @@
         <p class="section-subtitle">最新の更新情報・開発状況</p>
         
         <div class="news-container">
-          <!-- ポートフォリオサイト更新 (2025.10.14) -->
+          <!-- Memoia公開 (2025.10.24) -->
           <div class="news-item featured">
+            <div class="news-date">
+              <span class="date">2025.10.24</span>
+              <span class="category release">リリース</span>
+            </div>
+            <div class="news-content">
+              <h3 class="news-title">
+                <i class="fas fa-brain"></i>
+                Memoia - AI駆動型メモアプリを開発
+              </h3>
+              <p class="news-description">
+                Next.js 14 + Gemini APIで開発した次世代メモアプリをポートフォリオに追加しました。
+                テーブル自動生成、動的レイアウト提案、ブロックエディタなど多彩な機能を実装。
+                Firebaseとのリアルタイム同期により、複数デバイスで即座にデータが反映されます。
+              </p>
+              <div class="news-tags">
+                <span class="news-tag">Next.js 14</span>
+                <span class="news-tag">TypeScript</span>
+                <span class="news-tag">Gemini / ChatGPT API</span>
+                <span class="news-tag">Firebase</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ポートフォリオサイト更新 (2025.10.14) -->
+          <div class="news-item">
             <div class="news-date">
               <span class="date">2025.10.14</span>
               <span class="category update">更新</span>
@@ -2965,6 +3036,277 @@
           </div>
         </div>
       </section>
+    </div>
+  </div>
+
+  <!-- 詳細ページ：Memoia -->
+  <div id="memoia-app" class="page detail-page">
+    <div class="detail-header">
+      <a href="#" class="back-button" onclick="showMain()" ontouchstart="showMain()" style="z-index: 99999 !important; position: fixed !important; pointer-events: auto !important; touch-action: manipulation !important;">
+        戻る
+      </a>
+      <div class="detail-hero">
+        <h1>Memoia - AI駆動型メモアプリ</h1>
+        <p>AIが目的を推測し、最適なUI・構造を自動生成する次世代メモアプリ</p>
+        
+        <div class="demo-video-container" style="margin-top: 2rem;">
+          <iframe 
+            src="https://www.youtube.com/embed/Jf9Xfpkdj-k" 
+            title="Memoia デモ動画" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen
+            style="width: 100%; max-width: 800px; aspect-ratio: 16/9; border-radius: 16px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.1);">
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-content">
+      <!-- プロジェクト概要 -->
+      <div class="detail-section">
+        <h2>
+          <i class="fas fa-lightbulb"></i>
+          プロジェクト概要
+        </h2>
+        <p style="color: rgba(255, 255, 255, 0.85); line-height: 1.8; margin-bottom: 1.5rem;">
+          Memoiaは、メモの内容をAIが分析し、テーブル形式やリスト形式など最適なレイアウトを提案する次世代メモアプリです。
+          テーブルの自動生成、マークダウン対応など、実務で使える高機能エディタを実装しました。
+        </p>
+        <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+          <h3 style="color: rgba(255, 255, 255, 0.95); margin-bottom: 1rem;">💡 開発の動機</h3>
+          <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6; margin-bottom: 1rem;">
+            既存のメモアプリは「書く」ことに特化していますが、<strong>「書いた内容をどう整理するか」</strong>はユーザー任せでした。
+            AIの力を使えば、入力内容から意図を理解し、最適な構造を自動提案できるのではないかと考えました。
+          </p>
+          <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
+            Next.js 14の最新機能とGemini API・ChatGPT APIを統合し、<strong>高度なUIと実用的なAI機能</strong>を2週間で実装しました。
+          </p>
+        </div>
+      </div>
+
+      <!-- 主な機能 -->
+      <div class="detail-section">
+        <h2>
+          <i class="fas fa-star"></i>
+          主な機能
+        </h2>
+        <div class="feature-grid">
+          <div class="feature-item" style="border-left: 4px solid #00E5FF;">
+            <h3>📊 テーブル自動生成</h3>
+            <p>テキストから構造化されたテーブルに自動変換。列・行の追加削除、ドラッグリサイズに対応。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #00E5FF;">
+            <h3>🎨 動的レイアウト提案</h3>
+            <p>AIがメモの意図を分析し、最適な表示形式（リスト/テーブル/段落）を自動判定。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #00E5FF;">
+            <h3>📝 ブロックエディタ</h3>
+            <p>直感的な編集体験。ブロック単位での管理、タブやテンプレートの切り替えに対応。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #00E5FF;">
+            <h3>✨ マークダウン対応</h3>
+            <p>セル内での太字・装飾をサポート。リアルタイムプレビュー機能付き。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #00E5FF;">
+            <h3>📱 リアルタイム同期</h3>
+            <p>Firebase連携で複数デバイス間で即座に反映。クラウドベースでどこからでもアクセス可能。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #00E5FF;">
+            <h3>🌓 ダークモード</h3>
+            <p>目に優しい表示切り替え。システム設定との自動連携にも対応。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #00E5FF;">
+            <h3>📤 エクスポート機能</h3>
+            <p>JSON形式での書き出し対応。データのバックアップや移行が簡単。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 技術スタック -->
+      <div class="detail-section">
+        <h2>
+          <i class="fas fa-layer-group"></i>
+          使用技術・ライブラリ
+        </h2>
+        <div class="feature-grid">
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(0, 229, 255, 0.1) 0%, rgba(0, 188, 212, 0.05) 100%);">
+            <h3>⚛️ Next.js 14</h3>
+            <p>App Router、Server Components、Server Actionsなど最新機能を活用したモダンなアーキテクチャ。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(0, 122, 204, 0.1) 0%, rgba(2, 136, 209, 0.05) 100%);">
+            <h3>📘 TypeScript</h3>
+            <p>型安全な開発による堅牢性の確保。カスタム型定義で保守性向上。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(255, 202, 40, 0.1) 0%, rgba(251, 192, 45, 0.05) 100%);">
+            <h3>🔥 Firebase</h3>
+            <p>Firestore Database、Authentication、Hostingを統合。リアルタイムデータ同期を実装。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(66, 133, 244, 0.1) 0%, rgba(52, 168, 83, 0.05) 100%);">
+            <h3>🤖 AI API統合</h3>
+            <p>Gemini API・ChatGPT API両対応。高精度なテキスト分析とコンテンツ生成。プロンプトエンジニアリングを実践。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(14, 165, 233, 0.05) 100%);">
+            <h3>🎨 Tailwind CSS</h3>
+            <p>ユーティリティファーストなスタイリング。レスポンシブデザインを効率的に実装。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(124, 58, 237, 0.05) 100%);">
+            <h3>🎯 React Hooks</h3>
+            <p>カスタムフックによる状態管理とロジックの分離。useContext、useMemo、useCallbackを活用。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 技術的な挑戦 -->
+      <div class="detail-section">
+        <h2>
+          <i class="fas fa-code"></i>
+          技術的な挑戦
+        </h2>
+        <div class="feature-grid">
+          <div class="feature-item" style="border-left: 4px solid #00BCD4;">
+            <h3>🏗️ Next.js 14 App Router</h3>
+            <p>Server ComponentsとClient Componentsの適切な使い分け。レンダリング最適化とパフォーマンス向上を実現。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #00BCD4;">
+            <h3>🤖 AI統合アーキテクチャ</h3>
+            <p>Gemini APIとの効率的な連携。リクエスト制御、エラーハンドリング、レート制限対策を実装。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #00BCD4;">
+            <h3>📊 複雑なUIコンポーネント</h3>
+            <p>ドラッグリサイズ可能なテーブル、ブロック単位の管理、マークダウンのリアルタイムレンダリング。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #00BCD4;">
+            <h3>🔄 リアルタイムデータ同期</h3>
+            <p>Firestoreのリアルタイムリスナーによる複数デバイス間のシームレスな同期。楽観的UI更新を実装。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #00BCD4;">
+            <h3>⚡ パフォーマンス最適化</h3>
+            <p>デバウンス処理による保存頻度の調整、メモ化による不要な再レンダリング防止。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #00BCD4;">
+            <h3>🎯 型安全性の確保</h3>
+            <p>TypeScriptの厳格な型定義。カスタム型ガードとZodによるランタイムバリデーション。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 開発アプローチと学んだこと -->
+      <div class="detail-section">
+        <h2>
+          <i class="fas fa-lightbulb"></i>
+          開発アプローチと学んだこと
+        </h2>
+        <div style="background: linear-gradient(135deg, rgba(0, 229, 255, 0.1) 0%, rgba(0, 188, 212, 0.05) 100%); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(0, 229, 255, 0.2); margin-bottom: 2rem;">
+          <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.7; margin-bottom: 1rem;">
+            <strong>📌 開発手法について</strong><br>
+            このプロジェクトでも<strong>AI（GitHub Copilot / Claude）を活用したバイブコーディング</strong>で開発しました。
+            特にNext.js 14のApp Routerなど、初めて触る技術が多かったため、
+            AIの支援を受けながら効率的に学習・実装を進めました。
+          </p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature-item" style="border-left: 4px solid #00BCD4;">
+            <h3>⚛️ Next.js 14の深い理解</h3>
+            <p>App Router、Server/Client Components、Server Actionsなど最新機能を実践的に学習。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #00BCD4;">
+            <h3>🤖 AI API統合の実践</h3>
+            <p>Gemini APIの効果的なプロンプト設計、エラー処理、レスポンス解析の実装方法を習得。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #00BCD4;">
+            <h3>🎨 複雑なUI実装</h3>
+            <p>ドラッグ操作、リサイズ機能、動的コンポーネント生成など高度なインタラクション設計。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #00BCD4;">
+            <h3>🔥 Firebaseの実践活用</h3>
+            <p>Firestoreのデータモデリング、リアルタイムリスナー、認証システムの統合。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #00BCD4;">
+            <h3>📘 TypeScriptの型設計</h3>
+            <p>複雑なデータ構造の型定義、ジェネリクス、型ガードの効果的な活用方法。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #00BCD4;">
+            <h3>⚡ パフォーマンス意識</h3>
+            <p>レンダリング最適化、メモ化戦略、デバウンス処理などのベストプラクティス。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- このプロジェクトで得た学び -->
+      <div class="detail-section">
+        <h2>
+          <i class="fas fa-star"></i>
+          このプロジェクトで得た学び
+        </h2>
+        <div style="background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+          <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6; margin-bottom: 2rem; text-align: center;">
+            FlutterからReact/Next.jsへの技術領域拡大。<strong>Web開発の基礎とAI API連携の経験</strong>を得ることができました。
+          </p>
+          <div class="feature-grid">
+            <div style="text-align: center; padding: 1rem;">
+              <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">⚛️</div>
+              <h4 style="color: #00E5FF; margin-bottom: 0.5rem;">Next.js開発</h4>
+              <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">App Router、SSR/CSR、<br>Server Actions</p>
+            </div>
+            <div style="text-align: center; padding: 1rem;">
+              <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🤖</div>
+              <h4 style="color: #00E5FF; margin-bottom: 0.5rem;">AI API統合</h4>
+              <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">プロンプト設計、<br>レスポンス処理</p>
+            </div>
+            <div style="text-align: center; padding: 1rem;">
+              <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📘</div>
+              <h4 style="color: #00E5FF; margin-bottom: 0.5rem;">TypeScript</h4>
+              <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">型設計、ジェネリクス、<br>型安全性</p>
+            </div>
+            <div style="text-align: center; padding: 1rem;">
+              <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🔥</div>
+              <h4 style="color: #00E5FF; margin-bottom: 0.5rem;">Firebase</h4>
+              <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">リアルタイム同期、<br>認証、データモデリング</p>
+            </div>
+            <div style="text-align: center; padding: 1rem;">
+              <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎨</div>
+              <h4 style="color: #00E5FF; margin-bottom: 0.5rem;">UI設計</h4>
+              <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">複雑なインタラクション、<br>直感的なUI設計</p>
+            </div>
+            <div style="text-align: center; padding: 1rem;">
+              <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">⚡</div>
+              <h4 style="color: #00E5FF; margin-bottom: 0.5rem;">最適化</h4>
+              <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">パフォーマンス向上、<br>レンダリング制御</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 今後の展望 -->
+      <div class="detail-section">
+        <h2>
+          <i class="fas fa-rocket"></i>
+          今後の展望
+        </h2>
+        <div class="feature-grid">
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(0, 229, 255, 0.1) 0%, rgba(0, 188, 212, 0.05) 100%);">
+            <h3>🤖 AI補完機能</h3>
+            <p>Gemini API・ChatGPT APIに対応した入力予測機能。入力内容を文脈から理解し、続きを自動提案。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(156, 39, 176, 0.1) 0%, rgba(123, 31, 162, 0.05) 100%);">
+            <h3>🎯 AI機能の強化</h3>
+            <p>より高度な意図推測、複数AIモデルの比較活用、パーソナライズ機能の実装。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(255, 87, 34, 0.1) 0%, rgba(244, 67, 54, 0.05) 100%);">
+            <h3>🤝 コラボレーション機能</h3>
+            <p>リアルタイム共同編集、コメント機能、権限管理システムの追加。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(255, 152, 0, 0.1) 0%, rgba(251, 140, 0, 0.05) 100%);">
+            <h3>📱 モバイルアプリ化</h3>
+            <p>React NativeまたはFlutterでのネイティブアプリ開発。プッシュ通知やウィジェット機能の追加。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.1) 0%, rgba(67, 160, 71, 0.05) 100%);">
+            <h3>🔌 外部連携</h3>
+            <p>Notion、Evernote、Google Driveなど既存サービスとのインポート/エクスポート対応。</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
