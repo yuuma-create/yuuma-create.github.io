@@ -2647,6 +2647,21 @@
                 </div>
               </div>
               <div class="skill-category">
+                <h4>決済・クラウド</h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">Stripe</span>
+                  <span class="skill-tag">Vercel</span>
+                  <span class="skill-tag">Firebase</span>
+                </div>
+              </div>
+              <div class="skill-category">
+                <h4>開発ツール</h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">GitHub Copilot</span>
+                  <span class="skill-tag">AI駆動開発</span>
+                </div>
+              </div>
+              <div class="skill-category">
                 <h4>その他</h4>
                 <div class="skill-tags">
                   <span class="skill-tag">Git/GitHub</span>
@@ -2750,16 +2765,16 @@
             </div>
             <div class="work-content">
               <h3 class="work-title">Memoia - AI駆動型メモアプリ</h3>
-              <p class="work-subtitle">個人開発 | 2025年 | 制作期間：2週間</p>
+              <p class="work-subtitle">個人開発 | 2025年 | 制作期間：2週間 + 改善2週間 | 🌐 本番公開中</p>
               <p class="work-description">
-                AIが目的を推測し、最適なUI・構造を自動生成する次世代メモアプリ。テーブル自動生成、動的レイアウト提案、直感的なブロックエディタを実装。
+                AIが目的を推測し、最適なUI・構造を自動生成する次世代メモアプリ。画像OCR、AIチャット、Stripe決済デモなど30以上の機能を実装。Vercelで本番公開中。
               </p>
               <div class="work-tags">
                 <span class="work-tag">Next.js 14</span>
                 <span class="work-tag">TypeScript</span>
-                <span class="work-tag">Firebase</span>
-                <span class="work-tag">Gemini / ChatGPT API</span>
-                <span class="work-tag">Tailwind CSS</span>
+                <span class="work-tag">Stripe</span>
+                <span class="work-tag">Vercel</span>
+                <span class="work-tag">OCR</span>
               </div>
             </div>
           </div>
@@ -2866,11 +2881,40 @@
         <p class="section-subtitle">最新の更新情報・開発状況</p>
         
         <div class="news-container">
-          <!-- Memoia公開 (2025.10.24) -->
+          <!-- Memoia本番公開 (2025.11.04) -->
           <div class="news-item featured">
             <div class="news-date">
-              <span class="date">2025.10.24</span>
+              <span class="date">2025.11.04</span>
               <span class="category release">リリース</span>
+            </div>
+            <div class="news-content">
+              <h3 class="news-title">
+                <i class="fas fa-rocket"></i>
+                Memoia公開 & Stripe決済デモ実装
+              </h3>
+              <p class="news-description">
+                Next.js製AIメモアプリ「Memoia」をVercelで公開しました。
+                Stripe決済システム（テストモード）を統合し、サブスクリプション課金のデモ実装を完了。
+                画像OCR機能により、写真から構造化されたメモを自動生成できます。
+              </p>
+              <div class="news-tags">
+                <span class="news-tag">Next.js 14</span>
+                <span class="news-tag">TypeScript</span>
+                <span class="news-tag">Stripe</span>
+                <span class="news-tag">Vercel</span>
+                <span class="news-tag">OCR</span>
+              </div>
+              <a href="https://memoia-three.vercel.app/" target="_blank" class="news-link">
+                <i class="fas fa-external-link-alt"></i> アプリを試す
+              </a>
+            </div>
+          </div>
+
+          <!-- Memoia開発 (2025.10.24) -->
+          <div class="news-item">
+            <div class="news-date">
+              <span class="date">2025.10.24</span>
+              <span class="category update">更新</span>
             </div>
             <div class="news-content">
               <h3 class="news-title">
@@ -3059,6 +3103,13 @@
             style="width: 100%; max-width: 800px; aspect-ratio: 16/9; border-radius: 16px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.1);">
           </iframe>
         </div>
+
+        <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="https://memoia-three.vercel.app/" target="_blank" class="demo-button" style="background: linear-gradient(135deg, #00E5FF 0%, #00BCD4 100%); text-decoration: none; color: white; padding: 0.8rem 1.5rem; border-radius: 8px; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease; font-weight: 600;">
+            <i class="fas fa-external-link-alt"></i>
+            アプリを試す
+          </a>
+        </div>
       </div>
     </div>
 
@@ -3071,7 +3122,7 @@
         </h2>
         <p style="color: rgba(255, 255, 255, 0.85); line-height: 1.8; margin-bottom: 1.5rem;">
           Memoiaは、メモの内容をAIが分析し、テーブル形式やリスト形式など最適なレイアウトを提案する次世代メモアプリです。
-          テーブルの自動生成、マークダウン対応など、実務で使える高機能エディタを実装しました。
+          画像OCR、AIチャット、Stripe決済デモなど、30以上の機能を実装。Vercelで本番公開中です。
         </p>
         <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
           <h3 style="color: rgba(255, 255, 255, 0.95); margin-bottom: 1rem;">💡 開発の動機</h3>
@@ -3080,7 +3131,7 @@
             AIの力を使えば、入力内容から意図を理解し、最適な構造を自動提案できるのではないかと考えました。
           </p>
           <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
-            Next.js 14の最新機能とGemini API・ChatGPT APIを統合し、<strong>高度なUIと実用的なAI機能</strong>を2週間で実装しました。
+            Next.js 14とマルチAI APIを統合し、<strong>実用的なプロダクト</strong>として本番公開まで実現しました。
           </p>
         </div>
       </div>
@@ -3093,32 +3144,36 @@
         </h2>
         <div class="feature-grid">
           <div class="feature-item" style="border-left: 4px solid #00E5FF;">
+            <h3>🖼️ 画像OCR</h3>
+            <p>写真から構造化されたメモを自動生成。Google Cloud Vision APIで高精度な文字認識を実現。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #00E5FF;">
+            <h3>🤖 AIチャット</h3>
+            <p>複数メモを参照した高度な質問対応。Gemini/ChatGPT APIによるマルチAI統合。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #00E5FF;">
             <h3>📊 テーブル自動生成</h3>
             <p>テキストから構造化されたテーブルに自動変換。列・行の追加削除、ドラッグリサイズに対応。</p>
           </div>
           <div class="feature-item" style="border-left: 4px solid #00E5FF;">
-            <h3>🎨 動的レイアウト提案</h3>
-            <p>AIがメモの意図を分析し、最適な表示形式（リスト/テーブル/段落）を自動判定。</p>
+            <h3>💳 Stripe決済デモ</h3>
+            <p>サブスクリプション課金システム（テストモード）。Webhook連携、顧客管理の実装デモ。</p>
           </div>
           <div class="feature-item" style="border-left: 4px solid #00E5FF;">
-            <h3>📝 ブロックエディタ</h3>
-            <p>直感的な編集体験。ブロック単位での管理、タブやテンプレートの切り替えに対応。</p>
+            <h3>📝 リッチエディタ</h3>
+            <p>直感的な編集体験。ブロック単位での管理、マークダウン対応、テンプレート機能。</p>
           </div>
           <div class="feature-item" style="border-left: 4px solid #00E5FF;">
-            <h3>✨ マークダウン対応</h3>
-            <p>セル内での太字・装飾をサポート。リアルタイムプレビュー機能付き。</p>
+            <h3>☁️ リアルタイム同期</h3>
+            <p>Firebase Firestoreで複数デバイス間で即座に反映。クラウドベースでどこからでもアクセス可能。</p>
           </div>
           <div class="feature-item" style="border-left: 4px solid #00E5FF;">
-            <h3>📱 リアルタイム同期</h3>
-            <p>Firebase連携で複数デバイス間で即座に反映。クラウドベースでどこからでもアクセス可能。</p>
+            <h3>💡 スマートレイアウト</h3>
+            <p>AIが内容に応じて最適なUIを提案。リスト/テーブル/段落を自動判定。</p>
           </div>
           <div class="feature-item" style="border-left: 4px solid #00E5FF;">
-            <h3>🌓 ダークモード</h3>
-            <p>目に優しい表示切り替え。システム設定との自動連携にも対応。</p>
-          </div>
-          <div class="feature-item" style="border-left: 4px solid #00E5FF;">
-            <h3>📤 エクスポート機能</h3>
-            <p>JSON形式での書き出し対応。データのバックアップや移行が簡単。</p>
+            <h3>🌐 本番公開</h3>
+            <p>VercelでCI/CD完備。カスタムドメイン、SSL対応、グローバルCDNで高速配信。</p>
           </div>
         </div>
       </div>
@@ -3146,6 +3201,14 @@
             <h3>🤖 AI API統合</h3>
             <p>Gemini API・ChatGPT API両対応。高精度なテキスト分析とコンテンツ生成。プロンプトエンジニアリングを実践。</p>
           </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(79, 70, 229, 0.05) 100%);">
+            <h3>💳 Stripe (テストモード)</h3>
+            <p>サブスクリプション課金システムのデモ実装。Webhook連携、顧客管理機能を検証。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(0, 0, 0, 0.1) 0%, rgba(38, 38, 38, 0.05) 100%);">
+            <h3>▲ Vercel</h3>
+            <p>CI/CD、プレビューデプロイ、グローバルCDN。本番環境の構築・運用を実現。</p>
+          </div>
           <div class="feature-item" style="background: linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(14, 165, 233, 0.05) 100%);">
             <h3>🎨 Tailwind CSS</h3>
             <p>ユーティリティファーストなスタイリング。レスポンシブデザインを効率的に実装。</p>
@@ -3165,28 +3228,28 @@
         </h2>
         <div class="feature-grid">
           <div class="feature-item" style="border-left: 4px solid #00BCD4;">
-            <h3>🏗️ Next.js 14 App Router</h3>
-            <p>Server ComponentsとClient Componentsの適切な使い分け。レンダリング最適化とパフォーマンス向上を実現。</p>
+            <h3>🏗️ Next.js 14フルスタック開発</h3>
+            <p>App Router、Server Actions、API Routesを活用したフルスタック実装。本番環境での運用を実現。</p>
           </div>
           <div class="feature-item" style="border-left: 4px solid #00BCD4;">
-            <h3>🤖 AI統合アーキテクチャ</h3>
-            <p>Gemini APIとの効率的な連携。リクエスト制御、エラーハンドリング、レート制限対策を実装。</p>
+            <h3>💳 Stripe決済デモ実装</h3>
+            <p>サブスクリプション管理、Webhook処理、顧客ポータル連携をテストモードで実装。課金システムの検証。</p>
           </div>
           <div class="feature-item" style="border-left: 4px solid #00BCD4;">
-            <h3>📊 複雑なUIコンポーネント</h3>
-            <p>ドラッグリサイズ可能なテーブル、ブロック単位の管理、マークダウンのリアルタイムレンダリング。</p>
+            <h3>🤖 マルチAI統合</h3>
+            <p>Gemini/ChatGPT APIの統合。プロンプトエンジニアリング、エラーハンドリング、コスト最適化を実装。</p>
           </div>
           <div class="feature-item" style="border-left: 4px solid #00BCD4;">
-            <h3>🔄 リアルタイムデータ同期</h3>
-            <p>Firestoreのリアルタイムリスナーによる複数デバイス間のシームレスな同期。楽観的UI更新を実装。</p>
+            <h3>� 画像OCR実装</h3>
+            <p>Google Cloud Vision APIとの連携。画像アップロード、OCR処理、構造化データ生成のパイプライン構築。</p>
           </div>
           <div class="feature-item" style="border-left: 4px solid #00BCD4;">
-            <h3>⚡ パフォーマンス最適化</h3>
-            <p>デバウンス処理による保存頻度の調整、メモ化による不要な再レンダリング防止。</p>
+            <h3>🔒 Firestoreセキュリティ</h3>
+            <p>セキュリティルールの設計。ユーザー認証、データアクセス制御、リアルタイムリスナーの実装。</p>
           </div>
           <div class="feature-item" style="border-left: 4px solid #00BCD4;">
-            <h3>🎯 型安全性の確保</h3>
-            <p>TypeScriptの厳格な型定義。カスタム型ガードとZodによるランタイムバリデーション。</p>
+            <h3>� 本番デプロイ</h3>
+            <p>VercelでのCI/CD構築。環境変数管理、プレビューデプロイ、カスタムドメイン設定。</p>
           </div>
         </div>
       </div>
@@ -3288,6 +3351,14 @@
           <div class="feature-item" style="background: linear-gradient(135deg, rgba(0, 229, 255, 0.1) 0%, rgba(0, 188, 212, 0.05) 100%);">
             <h3>🤖 AI補完機能</h3>
             <p>Gemini API・ChatGPT APIに対応した入力予測機能。入力内容を文脈から理解し、続きを自動提案。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(79, 70, 229, 0.05) 100%);">
+            <h3>🎙️ 音声ファイル文字起こし</h3>
+            <p>AIによる音声ファイルの読み込みと自動文字起こし。構造化されたメモへの変換で効率的な議事録作成を実現。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(219, 39, 119, 0.05) 100%);">
+            <h3>🎤 リアルタイム音声入力</h3>
+            <p>リアルタイムで音声認識・文字起こし。話しながらメモを作成できるハンズフリー機能の実装。</p>
           </div>
           <div class="feature-item" style="background: linear-gradient(135deg, rgba(156, 39, 176, 0.1) 0%, rgba(123, 31, 162, 0.05) 100%);">
             <h3>🎯 AI機能の強化</h3>
