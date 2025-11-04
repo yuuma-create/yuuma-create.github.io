@@ -2527,7 +2527,7 @@
               <span class="stat-label">プロジェクト</span>
             </div>
             <div class="stat-item">
-              <span class="stat-number">2+</span>
+              <span class="stat-number">7+</span>
               <span class="stat-label">開発言語</span>
             </div>
             <div class="stat-item">
@@ -2614,19 +2614,33 @@
             </div>
             <div class="skill-list">
               <div class="skill-category">
+                <h4>プログラミング言語</h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">TypeScript</span>
+                  <span class="skill-tag">JavaScript</span>
+                  <span class="skill-tag">Swift</span>
+                  <span class="skill-tag">Dart</span>
+                  <span class="skill-tag">Python</span>
+                  <span class="skill-tag">Java</span>
+                  <span class="skill-tag">HTML/CSS</span>
+                </div>
+              </div>
+              <div class="skill-category">
                 <h4>Web開発</h4>
                 <div class="skill-tags">
                   <span class="skill-tag">Next.js 14</span>
-                  <span class="skill-tag">TypeScript</span>
                   <span class="skill-tag">React</span>
                   <span class="skill-tag">Tailwind CSS</span>
+                  <span class="skill-tag">Node.js</span>
                 </div>
               </div>
               <div class="skill-category">
                 <h4>モバイル開発</h4>
                 <div class="skill-tags">
+                  <span class="skill-tag">Swift</span>
+                  <span class="skill-tag">SwiftUI</span>
+                  <span class="skill-tag">iOS</span>
                   <span class="skill-tag">Flutter</span>
-                  <span class="skill-tag">Dart</span>
                   <span class="skill-tag">Firebase</span>
                 </div>
               </div>
@@ -2755,6 +2769,30 @@
       <section id="works" class="works-section">
         <h2 class="works-title">Works</h2>
         <div class="works-grid">
+          <!-- Photo Organizer - iOS写真整理アプリ -->
+          <div class="work-card" onclick="showDetail('photo-organizer-app')">
+            <div class="work-image">
+              <img src="./image/photo-organizer.png" alt="Photo Organizer - iOS写真整理アプリ" class="work-image-img">
+              <div class="work-image-overlay">
+                <i class="fas fa-images"></i>
+              </div>
+            </div>
+            <div class="work-content">
+              <h3 class="work-title">Photo Organizer - iOS写真整理アプリ</h3>
+              <p class="work-subtitle">個人開発 | 2025年 | 🚧 開発予定 | 📱 App Store公開予定</p>
+              <p class="work-description">
+                iPhoneの写真を容量別にソートして整理できるアプリ。容量の大きい写真を特定し、ストレージ管理を効率化。SwiftUIでネイティブなiOS体験を提供予定。
+              </p>
+              <div class="work-tags">
+                <span class="work-tag">Swift</span>
+                <span class="work-tag">SwiftUI</span>
+                <span class="work-tag">iOS</span>
+                <span class="work-tag">Photos Framework</span>
+                <span class="work-tag">App Store</span>
+              </div>
+            </div>
+          </div>
+
           <!-- Memoia - AI駆動型メモアプリ -->
           <div class="work-card" onclick="showDetail('memoia-app')">
             <div class="work-image">
@@ -2881,6 +2919,31 @@
         <p class="section-subtitle">最新の更新情報・開発状況</p>
         
         <div class="news-container">
+          <!-- Photo Organizer開発開始 (2025.11.04) -->
+          <div class="news-item featured">
+            <div class="news-date">
+              <span class="date">2025.11.04</span>
+              <span class="category update">開発開始</span>
+            </div>
+            <div class="news-content">
+              <h3 class="news-title">
+                <i class="fas fa-mobile-alt"></i>
+                iOS写真整理アプリ開発開始
+              </h3>
+              <p class="news-description">
+                iPhoneの写真を容量別にソート・整理できるアプリの開発を開始しました。
+                写真ライブラリから容量の大きいファイルを特定し、ストレージ管理を効率化。
+                SwiftとPhotos Frameworkを活用し、App Store公開を目指します。
+              </p>
+              <div class="news-tags">
+                <span class="news-tag">Swift</span>
+                <span class="news-tag">SwiftUI</span>
+                <span class="news-tag">iOS</span>
+                <span class="news-tag">Photos Framework</span>
+              </div>
+            </div>
+          </div>
+
           <!-- Memoia本番公開 (2025.11.04) -->
           <div class="news-item featured">
             <div class="news-date">
@@ -3080,6 +3143,191 @@
           </div>
         </div>
       </section>
+    </div>
+  </div>
+
+  <!-- 詳細ページ：Photo Organizer -->
+  <div id="photo-organizer-app" class="page detail-page">
+    <div class="detail-header">
+      <a href="#" class="back-button" onclick="showMain()" ontouchstart="showMain()" style="z-index: 99999 !important; position: fixed !important; pointer-events: auto !important; touch-action: manipulation !important;">
+        戻る
+      </a>
+      <div class="detail-hero">
+        <h1>Photo Organizer - iOS写真整理アプリ</h1>
+        <p>iPhoneの写真を容量別にソート・整理してストレージを最適化</p>
+        
+        <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(255, 149, 0, 0.1) 0%, rgba(255, 204, 0, 0.05) 100%); border-radius: 12px; border: 1px solid rgba(255, 149, 0, 0.2);">
+          <p style="color: rgba(255, 255, 255, 0.9); text-align: center; font-size: 1.1rem;">
+            <i class="fas fa-hammer"></i> <strong>開発予定</strong> - App Store公開を目指して開発中
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-content">
+      <!-- プロジェクト概要 -->
+      <div class="detail-section">
+        <h2>
+          <i class="fas fa-lightbulb"></i>
+          プロジェクト概要
+        </h2>
+        <p style="color: rgba(255, 255, 255, 0.85); line-height: 1.8; margin-bottom: 1.5rem;">
+          iPhoneのストレージが写真で圧迫される問題を解決するアプリです。
+          写真ライブラリ内のファイルを容量別にソート表示し、容量の大きいファイルを簡単に特定・削除できます。
+        </p>
+        <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+          <h3 style="color: rgba(255, 255, 255, 0.95); margin-bottom: 1rem;">💡 開発の動機</h3>
+          <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6; margin-bottom: 1rem;">
+            iPhoneで写真を大量に保存していると、気づかないうちにストレージが圧迫されます。
+            しかし、<strong>どの写真が容量を占有しているか</strong>を確認する手段が標準アプリにはありません。
+          </p>
+          <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
+            容量別にソートできるアプリがあれば、効率的にストレージを管理できると考え、Swiftでネイティブアプリとして開発を開始しました。
+          </p>
+        </div>
+      </div>
+
+      <!-- 主な機能（予定） -->
+      <div class="detail-section">
+        <h2>
+          <i class="fas fa-star"></i>
+          実装予定の機能
+        </h2>
+        <div class="feature-grid">
+          <div class="feature-item" style="border-left: 4px solid #FF9500;">
+            <h3>📊 容量別ソート</h3>
+            <p>写真ライブラリ内の全ての写真・動画を容量順に表示。大容量ファイルを一目で確認可能。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #FF9500;">
+            <h3>🗑️ 一括削除</h3>
+            <p>不要な大容量ファイルを選択して一括削除。ストレージを効率的に解放。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #FF9500;">
+            <h3>📸 プレビュー機能</h3>
+            <p>削除前に写真・動画のプレビューを確認。誤削除を防止。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #FF9500;">
+            <h3>📈 ストレージ分析</h3>
+            <p>写真ライブラリの容量使用状況を可視化。種類別・期間別の分析表示。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #FF9500;">
+            <h3>🔍 検索・フィルター</h3>
+            <p>撮影日時、ファイル形式、容量範囲でフィルタリング。目的の写真を素早く特定。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #FF9500;">
+            <h3>🎨 ネイティブUI</h3>
+            <p>SwiftUIで構築した直感的なインターフェース。iOS標準に準拠した操作性。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 技術スタック -->
+      <div class="detail-section">
+        <h2>
+          <i class="fas fa-code"></i>
+          技術スタック
+        </h2>
+        <div class="feature-grid">
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(255, 149, 0, 0.1) 0%, rgba(255, 204, 0, 0.05) 100%);">
+            <h3>🍎 Swift</h3>
+            <p>Appleのモダンなプログラミング言語。型安全性、パフォーマンス、表現力の高い構文。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(94, 92, 230, 0.1) 0%, rgba(87, 86, 214, 0.05) 100%);">
+            <h3>📱 SwiftUI</h3>
+            <p>宣言的UIフレームワーク。レスポンシブで美しいiOSアプリUIを効率的に構築。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(52, 199, 89, 0.1) 0%, rgba(48, 176, 199, 0.05) 100%);">
+            <h3>🖼️ Photos Framework</h3>
+            <p>iOSの写真ライブラリへのアクセス。メタデータ取得、容量計算、削除処理を実装。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(10, 132, 255, 0.1) 0%, rgba(48, 176, 199, 0.05) 100%);">
+            <h3>🔐 Privacy API</h3>
+            <p>写真ライブラリへのアクセス権限管理。ユーザープライバシーを保護。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 技術的な挑戦 -->
+      <div class="detail-section">
+        <h2>
+          <i class="fas fa-code"></i>
+          技術的な挑戦
+        </h2>
+        <div class="feature-grid">
+          <div class="feature-item" style="border-left: 4px solid #FF9500;">
+            <h3>📱 初のSwift/iOS開発</h3>
+            <p>Webアプリ開発の経験を活かし、ネイティブiOSアプリに初挑戦。Swiftの型システムとSwiftUIの習得。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #FF9500;">
+            <h3>🖼️ Photos Framework統合</h3>
+            <p>大量の写真データを効率的に処理。バッチ処理、メモリ管理、パフォーマンス最適化。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #FF9500;">
+            <h3>🔐 プライバシー対応</h3>
+            <p>写真ライブラリアクセスの権限管理。ユーザーデータ保護とApp Storeガイドライン遵守。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #FF9500;">
+            <h3>📊 大容量データ処理</h3>
+            <p>数千枚の写真データをスムーズにソート・表示。非同期処理とUIの応答性維持。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #FF9500;">
+            <h3>🎯 App Store公開</h3>
+            <p>App Store審査に向けた準備。アプリアイコン、スクリーンショット、プライバシーポリシー作成。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 今後の展望 -->
+      <div class="detail-section">
+        <h2>
+          <i class="fas fa-rocket"></i>
+          今後の展望
+        </h2>
+        <div class="feature-grid">
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(88, 86, 214, 0.1) 0%, rgba(138, 43, 226, 0.05) 100%);">
+            <h3>☁️ iCloud連携</h3>
+            <p>iCloud Photosとの同期。クラウドストレージの最適化も視野に。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(255, 45, 85, 0.1) 0%, rgba(255, 59, 48, 0.05) 100%);">
+            <h3>🤖 AI重複検出</h3>
+            <p>類似画像を自動検出し、重複ファイルを削減。機械学習で画像比較。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(175, 82, 222, 0.1) 0%, rgba(191, 90, 242, 0.05) 100%);">
+            <h3>📊 詳細分析</h3>
+            <p>撮影場所、時間帯、カメラモード別の容量分析。データ可視化の強化。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(255, 204, 0, 0.1) 0%, rgba(255, 214, 10, 0.05) 100%);">
+            <h3>🔄 自動整理</h3>
+            <p>定期的に大容量ファイルを通知。スマートな自動削除提案機能。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 開発期間・ステータス -->
+      <div class="detail-section">
+        <h2>
+          <i class="fas fa-calendar-alt"></i>
+          開発ステータス
+        </h2>
+        <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+          <div style="margin-bottom: 1rem;">
+            <strong style="color: rgba(255, 255, 255, 0.95);">🚧 現在の状況:</strong>
+            <span style="color: rgba(255, 255, 255, 0.8);"> 企画・設計フェーズ</span>
+          </div>
+          <div style="margin-bottom: 1rem;">
+            <strong style="color: rgba(255, 255, 255, 0.95);">🎯 目標:</strong>
+            <span style="color: rgba(255, 255, 255, 0.8);"> App Store公開</span>
+          </div>
+          <div style="margin-bottom: 1rem;">
+            <strong style="color: rgba(255, 255, 255, 0.95);">📅 予定:</strong>
+            <span style="color: rgba(255, 255, 255, 0.8);"> 2025年内のリリースを目指す</span>
+          </div>
+          <div>
+            <strong style="color: rgba(255, 255, 255, 0.95);">💪 開発アプローチ:</strong>
+            <span style="color: rgba(255, 255, 255, 0.8);"> MVPから始め、ユーザーフィードバックを元に機能拡張</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
