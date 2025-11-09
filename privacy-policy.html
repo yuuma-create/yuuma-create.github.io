@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プライバシーポリシー - PhotoSort</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f7;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: white;
+            min-height: 100vh;
+        }
+        
+        header {
+            text-align: center;
+            padding-bottom: 40px;
+            border-bottom: 2px solid #f0f0f0;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #1d1d1f;
+        }
+        
+        .last-updated {
+            color: #86868b;
+            font-size: 0.9em;
+        }
+        
+        .language-selector {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .language-selector a {
+            display: inline-block;
+            padding: 8px 20px;
+            margin: 0 5px;
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+            text-decoration: none;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+        
+        .language-selector a:hover,
+        .language-selector a.active {
+            background-color: #007aff;
+            color: white;
+        }
+        
+        h2 {
+            font-size: 1.8em;
+            margin: 40px 0 20px;
+            color: #1d1d1f;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        h3 {
+            font-size: 1.3em;
+            margin: 30px 0 15px;
+            color: #1d1d1f;
+        }
+        
+        h4 {
+            font-size: 1.1em;
+            margin: 20px 0 10px;
+            color: #424245;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: #1d1d1f;
+        }
+        
+        ul {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        a {
+            color: #007aff;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .important {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        footer {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 60px;
+            border-top: 2px solid #f0f0f0;
+            color: #86868b;
+            font-size: 0.9em;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, #f0f0f0, transparent);
+            margin: 60px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>プライバシーポリシー</h1>
+            <h1 style="font-size: 1.5em; margin-top: 10px;">Privacy Policy</h1>
+            <p class="last-updated">最終更新日: 2025年11月8日 / Last Updated: November 8, 2025</p>
+            <div class="language-selector">
+                <a href="#ja" class="active" onclick="showLanguage('ja'); return false;">日本語</a>
+                <a href="#en" onclick="showLanguage('en'); return false;">English</a>
+            </div>
+        </header>
+
+        <!-- 日本語版 -->
+        <div id="ja-content" class="language-content">
+            <div class="section">
+                <h2>1. はじめに</h2>
+                <p>写真整理（以下「本アプリ」）をご利用いただきありがとうございます。本プライバシーポリシーは、本アプリがどのような情報を収集し、どのように使用するかを説明するものです。</p>
+            </div>
+
+            <div class="section">
+                <h2>2. 収集する情報</h2>
+                
+                <h3>2.1 写真ライブラリへのアクセス</h3>
+                <p>本アプリは、以下の目的で写真ライブラリにアクセスします：</p>
+                <ul>
+                    <li>写真と動画のファイルサイズの取得</li>
+                    <li>撮影日時の取得</li>
+                    <li>メディアタイプ（画像/動画）の判定</li>
+                    <li>ユーザーが選択した写真の削除</li>
+                </ul>
+                
+                <div class="important">
+                    <strong>重要:</strong> 本アプリは写真や動画の内容自体を収集、保存、送信することはありません。すべての処理はお使いのデバイス内でのみ行われます。
+                </div>
+
+                <h3>2.2 デバイスストレージ情報</h3>
+                <p>本アプリは、以下の情報を取得します：</p>
+                <ul>
+                    <li>デバイスの総容量</li>
+                    <li>使用済み容量</li>
+                    <li>空き容量</li>
+                </ul>
+                <p>これらの情報は統計表示のためにのみ使用され、外部に送信されることはありません。</p>
+
+                <h3>2.3 収集しない情報</h3>
+                <p>本アプリは以下の情報を<strong>収集しません</strong>：</p>
+                <ul>
+                    <li>個人を特定できる情報</li>
+                    <li>位置情報</li>
+                    <li>連絡先</li>
+                    <li>デバイスID（UDID等）</li>
+                    <li>写真や動画のコンテンツ</li>
+                    <li>ユーザーの行動履歴</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>3. 情報の使用目的</h2>
+                <p>収集した情報は、以下の目的でのみ使用されます：</p>
+                <ul>
+                    <li>ストレージ使用状況の表示</li>
+                    <li>写真と動画の整理補助</li>
+                    <li>アプリ内統計の表示</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>4. 情報の保存</h2>
+                <p>本アプリは、以下の情報のみをデバイス内に保存します：</p>
+                <ul>
+                    <li>ユーザーの並び替え設定（UserDefaults）</li>
+                    <li>フィルター設定（UserDefaults）</li>
+                </ul>
+                <p>これらの設定は、お使いのデバイス内にのみ保存され、外部に送信されることはありません。</p>
+            </div>
+
+            <div class="section">
+                <h2>5. 第三者への情報提供</h2>
+                <p>本アプリは、ユーザーの個人情報を第三者に販売、貸与、共有することはありません。</p>
+                
+                <h3>5.1 広告について</h3>
+                <p>本アプリは、Google AdMob を使用して広告を表示します。AdMob は以下の情報を収集する可能性があります：</p>
+                <ul>
+                    <li>デバイスの広告ID（IDFA）</li>
+                    <li>IPアドレス</li>
+                    <li>デバイスの種類</li>
+                    <li>アプリの使用状況</li>
+                </ul>
+                <p>AdMobのプライバシーポリシー: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></p>
+                
+                <div class="important">
+                    <strong>広告のパーソナライゼーションをオフにする方法:</strong><br>
+                    設定 > プライバシー > 広告 > 「パーソナライズされた広告」をオフ
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>6. データのセキュリティ</h2>
+                <p>本アプリは、お客様のデータを保護するために以下の対策を実施しています：</p>
+                <ul>
+                    <li>すべてのデータ処理をデバイス内で完結</li>
+                    <li>外部サーバーへのデータ送信なし</li>
+                    <li>Appleのサンドボックス技術を使用した隔離環境での動作</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>7. 子供のプライバシー</h2>
+                <p>本アプリは、13歳未満の子供から意図的に個人情報を収集することはありません。</p>
+            </div>
+
+            <div class="section">
+                <h2>8. 権限について</h2>
+                <p>本アプリは、以下の権限を要求します：</p>
+                
+                <h3>写真ライブラリへのアクセス</h3>
+                <ul>
+                    <li><strong>目的:</strong> 写真と動画の容量分析、整理機能の提供</li>
+                    <li><strong>使用方法:</strong> ファイルサイズとメタデータの読み取り、ユーザーが選択した項目の削除</li>
+                    <li><strong>データの送信:</strong> なし（すべてローカル処理）</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>9. ユーザーの権利</h2>
+                <p>ユーザーは以下の権利を有します：</p>
+                <ul>
+                    <li>いつでも写真ライブラリへのアクセス許可を取り消すことができます</li>
+                    <li>アプリをアンインストールすることで、すべての設定データを削除できます</li>
+                    <li>広告のパーソナライゼーションをオフにすることができます</li>
+                </ul>
+                
+                <div class="important">
+                    <strong>アクセス許可の変更方法:</strong><br>
+                    設定 > プライバシーとセキュリティ > 写真 > 写真整理
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>10. プライバシーポリシーの変更</h2>
+                <p>本プライバシーポリシーは、必要に応じて変更されることがあります。重要な変更がある場合は、アプリ内またはこのページで通知します。</p>
+            </div>
+
+            <div class="section">
+                <h2>11. お問い合わせ</h2>
+                <p>本プライバシーポリシーに関するご質問やご意見がございましたら、以下までご連絡ください：</p>
+                <ul>
+                    <li>GitHub Issues: <a href="https://github.com/yuuma-create/photosortapp/issues" target="_blank">https://github.com/yuuma-create/photosortapp/issues</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- English Version -->
+        <div id="en-content" class="language-content" style="display: none;">
+            <div class="section">
+                <h2>1. Introduction</h2>
+                <p>Thank you for using PhotoSort (the "App"). This Privacy Policy explains what information the App collects and how it is used.</p>
+            </div>
+
+            <div class="section">
+                <h2>2. Information We Collect</h2>
+                
+                <h3>2.1 Photo Library Access</h3>
+                <p>The App accesses your photo library for the following purposes:</p>
+                <ul>
+                    <li>Retrieving file sizes of photos and videos</li>
+                    <li>Retrieving creation dates</li>
+                    <li>Determining media types (image/video)</li>
+                    <li>Deleting user-selected photos</li>
+                </ul>
+                
+                <div class="important">
+                    <strong>Important:</strong> The App does not collect, store, or transmit the actual content of your photos or videos. All processing is done locally on your device.
+                </div>
+
+                <h3>2.2 Device Storage Information</h3>
+                <p>The App retrieves the following information:</p>
+                <ul>
+                    <li>Total device capacity</li>
+                    <li>Used storage</li>
+                    <li>Available storage</li>
+                </ul>
+                <p>This information is used solely for displaying statistics and is never transmitted externally.</p>
+
+                <h3>2.3 Information We Do NOT Collect</h3>
+                <p>The App does <strong>NOT</strong> collect:</p>
+                <ul>
+                    <li>Personally identifiable information</li>
+                    <li>Location data</li>
+                    <li>Contacts</li>
+                    <li>Device IDs (UDID, etc.)</li>
+                    <li>Photo or video content</li>
+                    <li>User behavior history</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>3. How We Use Information</h2>
+                <p>Collected information is used solely for:</p>
+                <ul>
+                    <li>Displaying storage usage statistics</li>
+                    <li>Assisting with photo and video organization</li>
+                    <li>Showing in-app statistics</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>4. Information Storage</h2>
+                <p>The App stores only the following information locally on your device:</p>
+                <ul>
+                    <li>User sorting preferences (UserDefaults)</li>
+                    <li>Filter settings (UserDefaults)</li>
+                </ul>
+                <p>These settings are stored only on your device and are never transmitted externally.</p>
+            </div>
+
+            <div class="section">
+                <h2>5. Third-Party Information Sharing</h2>
+                <p>The App does not sell, rent, or share your personal information with third parties.</p>
+                
+                <h3>5.1 Advertising</h3>
+                <p>The App uses Google AdMob to display advertisements. AdMob may collect:</p>
+                <ul>
+                    <li>Device advertising ID (IDFA)</li>
+                    <li>IP address</li>
+                    <li>Device type</li>
+                    <li>App usage data</li>
+                </ul>
+                <p>AdMob Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></p>
+                
+                <div class="important">
+                    <strong>How to opt out of personalized ads:</strong><br>
+                    Settings > Privacy > Advertising > Turn off "Personalized Ads"
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>6. Data Security</h2>
+                <p>The App implements the following measures to protect your data:</p>
+                <ul>
+                    <li>All data processing is done locally on your device</li>
+                    <li>No data transmission to external servers</li>
+                    <li>Operation within Apple's sandbox environment</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>7. Children's Privacy</h2>
+                <p>The App does not knowingly collect personal information from children under 13.</p>
+            </div>
+
+            <div class="section">
+                <h2>8. Permissions</h2>
+                <p>The App requests the following permissions:</p>
+                
+                <h3>Photo Library Access</h3>
+                <ul>
+                    <li><strong>Purpose:</strong> Analyze photo and video capacity, provide organization features</li>
+                    <li><strong>Usage:</strong> Read file sizes and metadata, delete user-selected items</li>
+                    <li><strong>Data transmission:</strong> None (all local processing)</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>9. User Rights</h2>
+                <p>Users have the following rights:</p>
+                <ul>
+                    <li>Revoke photo library access permission at any time</li>
+                    <li>Delete all settings data by uninstalling the app</li>
+                    <li>Opt out of personalized advertising</li>
+                </ul>
+                
+                <div class="important">
+                    <strong>How to change access permissions:</strong><br>
+                    Settings > Privacy & Security > Photos > PhotoSort
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>10. Changes to This Privacy Policy</h2>
+                <p>This Privacy Policy may be updated as needed. Significant changes will be communicated through the app or this page.</p>
+            </div>
+
+            <div class="section">
+                <h2>11. Contact Us</h2>
+                <p>If you have questions or concerns about this Privacy Policy, please contact us:</p>
+                <ul>
+                    <li>GitHub Issues: <a href="https://github.com/yuuma-create/photosortapp/issues" target="_blank">https://github.com/yuuma-create/photosortapp/issues</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Yuma Araki. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function showLanguage(lang) {
+            const jaContent = document.getElementById('ja-content');
+            const enContent = document.getElementById('en-content');
+            const links = document.querySelectorAll('.language-selector a');
+            
+            if (lang === 'ja') {
+                jaContent.style.display = 'block';
+                enContent.style.display = 'none';
+                links[0].classList.add('active');
+                links[1].classList.remove('active');
+            } else {
+                jaContent.style.display = 'none';
+                enContent.style.display = 'block';
+                links[0].classList.remove('active');
+                links[1].classList.add('active');
+            }
+        }
+        
+        // URLハッシュに基づいて言語を切り替え
+        window.addEventListener('load', function() {
+            const hash = window.location.hash.substring(1);
+            if (hash === 'en') {
+                showLanguage('en');
+            }
+        });
+    </script>
+</body>
+</html>
