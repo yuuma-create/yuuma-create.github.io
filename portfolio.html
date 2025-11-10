@@ -5164,7 +5164,8 @@
     });
 
     // 画像拡大モーダル関数
-    const modalImageSources = [
+    // データツール用の画像配列
+    const dataToolModalImageSources = [
       './image/rakuraku_kobutsu_search_py1.png',
       './image/rakuraku_kobutsu_search_py2.png',
       './image/rakuraku_kobutsu_search_py3.png',
@@ -5175,7 +5176,7 @@
       './image/rakuraku_kobutsu_search_py8.png'
     ];
 
-    const modalImageAlts = [
+    const dataToolModalImageAlts = [
       'データ分析ツール - 単品検索',
       'データ分析ツール - 統計情報',
       'データ分析ツール - 一括検索',
@@ -5186,11 +5187,46 @@
       'データ分析ツール - グラフ表示'
     ];
 
+    // PhotoSort用の画像配列
+    const photoSortModalImageSources = [
+      './image/03_Statistics.png',
+      './image/02_SwipeView.png',
+      './image/01_PhotoGrid.png',
+      './image/04_DeleteCandidates.png',
+      './image/05_ExcludedPhotos.png'
+    ];
+
+    const photoSortModalImageAlts = [
+      'PhotoSort - 統計ビュー',
+      'PhotoSort - スワイプモード',
+      'PhotoSort - グリッドビュー',
+      'PhotoSort - 削除候補管理',
+      'PhotoSort - 次回除外リスト'
+    ];
+
     let currentModalSlide = 0;
+    let currentModalImageSources = [];
+    let currentModalImageAlts = [];
 
     function openImageModal(imageSrc, imageAlt) {
+      // パスを正規化して比較（末尾のファイル名で判定）
+      const normalizedSrc = imageSrc.toLowerCase();
+      
+      // PhotoSort画像配列をチェック
+      const isPhotoSort = photoSortModalImageSources.some(src => 
+        normalizedSrc.includes(src.split('/').pop().toLowerCase())
+      );
+      
+      if (isPhotoSort) {
+        currentModalImageSources = photoSortModalImageSources;
+        currentModalImageAlts = photoSortModalImageAlts;
+      } else {
+        currentModalImageSources = dataToolModalImageSources;
+        currentModalImageAlts = dataToolModalImageAlts;
+      }
+
       // 現在の画像のインデックスを取得
-      currentModalSlide = modalImageSources.indexOf(imageSrc);
+      currentModalSlide = currentModalImageSources.indexOf(imageSrc);
       if (currentModalSlide === -1) currentModalSlide = 0;
 
       const modal = document.getElementById('imageModal');
@@ -5202,7 +5238,7 @@
       modalImg.src = imageSrc;
       modalImg.alt = imageAlt;
       caption.textContent = imageAlt;
-      counter.textContent = `${currentModalSlide + 1} / ${modalImageSources.length}`;
+      counter.textContent = `${currentModalSlide + 1} / ${currentModalImageSources.length}`;
       
       // 戻るボタンを非表示
       const backButtons = document.querySelectorAll('.back-button');
@@ -5236,10 +5272,10 @@
       currentModalSlide += direction;
       
       // ループ処理
-      if (currentModalSlide >= modalImageSources.length) {
+      if (currentModalSlide >= currentModalImageSources.length) {
         currentModalSlide = 0;
       } else if (currentModalSlide < 0) {
-        currentModalSlide = modalImageSources.length - 1;
+        currentModalSlide = currentModalImageSources.length - 1;
       }
       
       // 画像と説明を更新
@@ -5251,10 +5287,10 @@
       modalImg.style.opacity = '0';
       
       setTimeout(() => {
-        modalImg.src = modalImageSources[currentModalSlide];
-        modalImg.alt = modalImageAlts[currentModalSlide];
-        caption.textContent = modalImageAlts[currentModalSlide];
-        counter.textContent = `${currentModalSlide + 1} / ${modalImageSources.length}`;
+        modalImg.src = currentModalImageSources[currentModalSlide];
+        modalImg.alt = currentModalImageAlts[currentModalSlide];
+        caption.textContent = currentModalImageAlts[currentModalSlide];
+        counter.textContent = `${currentModalSlide + 1} / ${currentModalImageSources.length}`;
         modalImg.style.opacity = '1';
       }, 150);
     }
