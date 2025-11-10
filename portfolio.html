@@ -2769,26 +2769,26 @@
       <section id="works" class="works-section">
         <h2 class="works-title">Works</h2>
         <div class="works-grid">
-          <!-- Photo Organizer - iOS写真整理アプリ -->
+          <!-- PhotoSort - iOS写真整理アプリ -->
           <div class="work-card" onclick="showDetail('photo-organizer-app')">
             <div class="work-image">
-              <img src="./image/photo-organizer.png" alt="Photo Organizer - iOS写真整理アプリ" class="work-image-img">
+              <img src="./image/03_Statistics.png" alt="PhotoSort - iOS写真整理アプリ" class="work-image-img">
               <div class="work-image-overlay">
                 <i class="fas fa-images"></i>
               </div>
             </div>
             <div class="work-content">
-              <h3 class="work-title">Photo Organizer - iOS写真整理アプリ</h3>
-              <p class="work-subtitle">個人開発 | 2025年 | 🚧 開発予定 | 📱 App Store公開予定</p>
+              <h3 class="work-title">PhotoSort - iOS写真整理アプリ</h3>
+              <p class="work-subtitle">個人開発 | 2025年 | 制作期間：1週間 | ✅ App Store審査中</p>
               <p class="work-description">
-                iPhoneの写真を容量別にソートして整理できるアプリ。容量の大きい写真を特定し、ストレージ管理を効率化。SwiftUIでネイティブなiOS体験を提供予定。
+                3つの整理モード（統計・スワイプ・グリッド）でiPhoneのストレージを最適化。直感的なUIと軽快な動作が特徴のネイティブアプリ。AdMob統合、iPad対応済み。
               </p>
               <div class="work-tags">
                 <span class="work-tag">Swift</span>
                 <span class="work-tag">SwiftUI</span>
-                <span class="work-tag">iOS</span>
-                <span class="work-tag">Photos Framework</span>
-                <span class="work-tag">App Store</span>
+                <span class="work-tag">iOS 17+</span>
+                <span class="work-tag">AdMob</span>
+                <span class="work-tag">iPad対応</span>
               </div>
             </div>
           </div>
@@ -2919,27 +2919,28 @@
         <p class="section-subtitle">最新の更新情報・開発状況</p>
         
         <div class="news-container">
-          <!-- Photo Organizer開発開始 (2025.11.04) -->
+          <!-- PhotoSort App Store審査提出 (2025.11.10) -->
           <div class="news-item featured">
             <div class="news-date">
-              <span class="date">2025.11.04</span>
-              <span class="category update">開発開始</span>
+              <span class="date">2025.11.10</span>
+              <span class="category release">審査提出</span>
             </div>
             <div class="news-content">
               <h3 class="news-title">
-                <i class="fas fa-mobile-alt"></i>
-                iOS写真整理アプリ開発開始
+                <i class="fas fa-rocket"></i>
+                PhotoSort App Store審査提出完了
               </h3>
               <p class="news-description">
-                iPhoneの写真を容量別にソート・整理できるアプリの開発を開始しました。
-                写真ライブラリから容量の大きいファイルを特定し、ストレージ管理を効率化。
-                SwiftとPhotos Frameworkを活用し、App Store公開を目指します。
+                iOS写真整理アプリ「PhotoSort」をApp Storeへ審査提出しました。
+                統計・スワイプ・グリッドの3つの整理モード、AdMob広告統合、iPad対応を実装。
+                約1週間で機能実装からUI調整、審査準備まで完了。初のSwiftネイティブアプリ開発です。
               </p>
               <div class="news-tags">
                 <span class="news-tag">Swift</span>
                 <span class="news-tag">SwiftUI</span>
-                <span class="news-tag">iOS</span>
-                <span class="news-tag">Photos Framework</span>
+                <span class="news-tag">iOS 17+</span>
+                <span class="news-tag">AdMob</span>
+                <span class="news-tag">App Store</span>
               </div>
             </div>
           </div>
@@ -3146,20 +3147,100 @@
     </div>
   </div>
 
-  <!-- 詳細ページ：Photo Organizer -->
+  <!-- 詳細ページ：PhotoSort -->
   <div id="photo-organizer-app" class="page detail-page">
     <div class="detail-header">
       <a href="#" class="back-button" onclick="showMain()" ontouchstart="showMain()" style="z-index: 99999 !important; position: fixed !important; pointer-events: auto !important; touch-action: manipulation !important;">
         戻る
       </a>
       <div class="detail-hero">
-        <h1>Photo Organizer - iOS写真整理アプリ</h1>
-        <p>iPhoneの写真を容量別にソート・整理してストレージを最適化</p>
+        <h1>PhotoSort - iOS写真整理アプリ</h1>
+        <p>3つの整理モードでiPhoneのストレージを最適化するネイティブアプリ</p>
         
-        <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(255, 149, 0, 0.1) 0%, rgba(255, 204, 0, 0.05) 100%); border-radius: 12px; border: 1px solid rgba(255, 149, 0, 0.2);">
-          <p style="color: rgba(255, 255, 255, 0.9); text-align: center; font-size: 1.1rem;">
-            <i class="fas fa-hammer"></i> <strong>開発予定</strong> - App Store公開を目指して開発中
+        <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(52, 199, 89, 0.15) 0%, rgba(48, 209, 88, 0.1) 100%); border-radius: 12px; border: 1px solid rgba(52, 199, 89, 0.3);">
+          <p style="color: rgba(255, 255, 255, 0.95); text-align: center; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+            <i class="fas fa-check-circle" style="color: #34C759;"></i> 
+            <strong>App Store審査中</strong> - 近日公開予定
           </p>
+        </div>
+
+        <!-- 画像スライダー -->
+        <div class="demo-image-container" style="margin-top: 2rem; position: relative; max-width: 900px; margin-left: auto; margin-right: auto;">
+          <div class="image-slider">
+            <button class="slider-button slider-button-prev" onclick="changePhotoSortSlide(-1)">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <div class="slider-images">
+              <img 
+                src="./image/03_Statistics.png" 
+                alt="PhotoSort - 統計ビュー" 
+                class="slider-image active"
+                data-slide="1"
+                onclick="openImageModal(this.src, this.alt)"
+                style="cursor: zoom-in; max-height: 1000px; object-fit: contain;">
+              <img 
+                src="./image/02_SwipeView.png" 
+                alt="PhotoSort - スワイプモード" 
+                class="slider-image"
+                data-slide="2"
+                onclick="openImageModal(this.src, this.alt)"
+                style="cursor: zoom-in; max-height: 1000px; object-fit: contain;">
+              <img 
+                src="./image/01_PhotoGrid.png" 
+                alt="PhotoSort - グリッドビュー" 
+                class="slider-image"
+                data-slide="3"
+                onclick="openImageModal(this.src, this.alt)"
+                style="cursor: zoom-in; max-height: 1000px; object-fit: contain;">
+              <img 
+                src="./image/04_DeleteCandidates.png" 
+                alt="PhotoSort - 削除候補管理" 
+                class="slider-image"
+                data-slide="4"
+                onclick="openImageModal(this.src, this.alt)"
+                style="cursor: zoom-in; max-height: 1000px; object-fit: contain;">
+              <img 
+                src="./image/05_ExcludedPhotos.png" 
+                alt="PhotoSort - 次回除外リスト" 
+                class="slider-image"
+                data-slide="5"
+                onclick="openImageModal(this.src, this.alt)"
+                style="cursor: zoom-in; max-height: 1000px; object-fit: contain;">
+            </div>
+            
+            <button class="slider-button slider-button-next" onclick="changePhotoSortSlide(1)">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+          
+          <div class="slider-indicators">
+            <span class="slider-indicator active" onclick="setPhotoSortSlide(1)"></span>
+            <span class="slider-indicator" onclick="setPhotoSortSlide(2)"></span>
+            <span class="slider-indicator" onclick="setPhotoSortSlide(3)"></span>
+            <span class="slider-indicator" onclick="setPhotoSortSlide(4)"></span>
+            <span class="slider-indicator" onclick="setPhotoSortSlide(5)"></span>
+          </div>
+          
+          <!-- 画像の説明 -->
+          <div style="margin-top: 1.5rem; text-align: center;">
+            <p style="color: rgba(255, 149, 0, 0.8); font-size: 0.9rem; margin-bottom: 1rem;">
+              <i class="fas fa-search-plus"></i> 画像をクリックで拡大表示
+            </p>
+            <p id="photoSortSlideDescription" style="color: rgba(255, 255, 255, 0.9); font-size: 1rem; line-height: 1.6; margin-bottom: 0.5rem; min-height: 3em;">
+              📊 統計ビュー - デバイス容量の可視化、写真・動画別の容量分析、最大ファイルのランキング表示
+            </p>
+            <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.85rem;">
+              <span id="photoSortSlideCounter">1 / 5</span>
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="#" class="demo-button" style="background: linear-gradient(135deg, #FF9500 0%, #FF8C00 100%); text-decoration: none; color: white; padding: 0.8rem 1.5rem; border-radius: 8px; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease; font-weight: 600; opacity: 0.6; cursor: not-allowed;">
+            <i class="fab fa-app-store-ios"></i>
+            App Store（審査中）
+          </a>
         </div>
       </div>
     </div>
@@ -3172,8 +3253,7 @@
           プロジェクト概要
         </h2>
         <p style="color: rgba(255, 255, 255, 0.85); line-height: 1.8; margin-bottom: 1.5rem;">
-          iPhoneのストレージが写真で圧迫される問題を解決するアプリです。
-          写真ライブラリ内のファイルを容量別にソート表示し、容量の大きいファイルを簡単に特定・削除できます。
+          iPhoneの写真・動画を効率的に整理できるネイティブiOSアプリ。<strong>3つの整理モード（統計・スワイプ・グリッド）</strong>で容量の大きいファイルを素早く特定し、ストレージ管理を最適化。直感的なUIと軽快な動作が特徴です。
         </p>
         <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
           <h3 style="color: rgba(255, 255, 255, 0.95); margin-bottom: 1rem;">💡 開発の動機</h3>
@@ -3182,41 +3262,41 @@
             しかし、<strong>どの写真が容量を占有しているか</strong>を確認する手段が標準アプリにはありません。
           </p>
           <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
-            容量別にソートできるアプリがあれば、効率的にストレージを管理できると考え、Swiftでネイティブアプリとして開発を開始しました。
+            「容量の大きい写真を素早く見つけて整理したい」というニーズに応えるため、Swiftでネイティブアプリとして開発しました。
           </p>
         </div>
       </div>
 
-      <!-- 主な機能（予定） -->
+      <!-- 主要機能 -->
       <div class="detail-section">
         <h2>
           <i class="fas fa-star"></i>
-          実装予定の機能
+          主要機能
         </h2>
         <div class="feature-grid">
           <div class="feature-item" style="border-left: 4px solid #FF9500;">
-            <h3>📊 容量別ソート</h3>
-            <p>写真ライブラリ内の全ての写真・動画を容量順に表示。大容量ファイルを一目で確認可能。</p>
+            <h3>📊 統計ビュー</h3>
+            <p>ストレージ使用状況を可視化。容量の大きい写真/動画のランキング表示、ファイルタイプ別の分析を提供。</p>
           </div>
           <div class="feature-item" style="border-left: 4px solid #FF9500;">
-            <h3>🗑️ 一括削除</h3>
-            <p>不要な大容量ファイルを選択して一括削除。ストレージを効率的に解放。</p>
+            <h3>👆 スワイプモード</h3>
+            <p>直感的なUI。左スワイプ：削除候補、右スワイプ：保持、上スワイプ：次回除外。削除候補を一括管理。</p>
           </div>
           <div class="feature-item" style="border-left: 4px solid #FF9500;">
-            <h3>📸 プレビュー機能</h3>
-            <p>削除前に写真・動画のプレビューを確認。誤削除を防止。</p>
+            <h3>🎯 グリッドビュー</h3>
+            <p>容量/日付でソート可能。ピンチイン・アウトでグリッド数変更（2〜5列）。写真/動画のフィルタリング機能搭載。</p>
           </div>
           <div class="feature-item" style="border-left: 4px solid #FF9500;">
-            <h3>📈 ストレージ分析</h3>
-            <p>写真ライブラリの容量使用状況を可視化。種類別・期間別の分析表示。</p>
+            <h3>💰 広告収益化</h3>
+            <p>インタースティシャル広告による収益化。適切なタイミングで非侵襲的に表示。</p>
           </div>
           <div class="feature-item" style="border-left: 4px solid #FF9500;">
-            <h3>🔍 検索・フィルター</h3>
-            <p>撮影日時、ファイル形式、容量範囲でフィルタリング。目的の写真を素早く特定。</p>
+            <h3>📱 iPad対応</h3>
+            <p>StackNavigationViewStyleを活用し、iPadの大画面に最適化された表示を実現。</p>
           </div>
           <div class="feature-item" style="border-left: 4px solid #FF9500;">
-            <h3>🎨 ネイティブUI</h3>
-            <p>SwiftUIで構築した直感的なインターフェース。iOS標準に準拠した操作性。</p>
+            <h3>🔒 プライバシー配慮</h3>
+            <p>写真はデバイス内処理のみ。外部サーバーへの送信なし。App Tracking Transparency (ATT) 対応。</p>
           </div>
         </div>
       </div>
@@ -3230,49 +3310,113 @@
         <div class="feature-grid">
           <div class="feature-item" style="background: linear-gradient(135deg, rgba(255, 149, 0, 0.1) 0%, rgba(255, 204, 0, 0.05) 100%);">
             <h3>🍎 Swift</h3>
-            <p>Appleのモダンなプログラミング言語。型安全性、パフォーマンス、表現力の高い構文。</p>
+            <p>Appleのモダンなプログラミング言語。型安全性、パフォーマンス、表現力の高い構文で堅牢なアプリを構築。</p>
           </div>
           <div class="feature-item" style="background: linear-gradient(135deg, rgba(94, 92, 230, 0.1) 0%, rgba(87, 86, 214, 0.05) 100%);">
             <h3>📱 SwiftUI</h3>
-            <p>宣言的UIフレームワーク。レスポンシブで美しいiOSアプリUIを効率的に構築。</p>
+            <p>宣言的UIフレームワーク。レスポンシブで美しいiOSアプリUIを効率的に構築。リアルタイムプレビューで開発を加速。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(10, 132, 255, 0.1) 0%, rgba(0, 122, 255, 0.05) 100%);">
+            <h3>📲 iOS 17+</h3>
+            <p>最新のiOS APIを活用。モダンな機能とパフォーマンスを提供。</p>
           </div>
           <div class="feature-item" style="background: linear-gradient(135deg, rgba(52, 199, 89, 0.1) 0%, rgba(48, 176, 199, 0.05) 100%);">
             <h3>🖼️ Photos Framework</h3>
-            <p>iOSの写真ライブラリへのアクセス。メタデータ取得、容量計算、削除処理を実装。</p>
+            <p>iOSの写真ライブラリへの高速アクセス。メタデータ取得、容量計算、削除処理を効率的に実装。</p>
           </div>
-          <div class="feature-item" style="background: linear-gradient(135deg, rgba(10, 132, 255, 0.1) 0%, rgba(48, 176, 199, 0.05) 100%);">
-            <h3>🔐 Privacy API</h3>
-            <p>写真ライブラリへのアクセス権限管理。ユーザープライバシーを保護。</p>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(255, 59, 48, 0.1) 0%, rgba(255, 45, 85, 0.05) 100%);">
+            <h3>💰 AdMob</h3>
+            <p>Google AdMobによる広告収益化。インタースティシャル広告の統合とタイミング制御。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(175, 82, 222, 0.1) 0%, rgba(191, 90, 242, 0.05) 100%);">
+            <h3>🔐 App Tracking Transparency</h3>
+            <p>ATTフレームワークによるプライバシー保護。ユーザーの追跡許可を適切に管理。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(90, 200, 250, 0.1) 0%, rgba(0, 199, 190, 0.05) 100%);">
+            <h3>💾 UserDefaults</h3>
+            <p>ユーザー設定の永続化。グリッド数、フィルター設定、除外リストを保存。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(255, 204, 0, 0.1) 0%, rgba(255, 214, 10, 0.05) 100%);">
+            <h3>🔄 Combine</h3>
+            <p>リアクティブプログラミングフレームワーク。非同期処理とデータフローを効率的に管理。</p>
           </div>
         </div>
       </div>
 
-      <!-- 技術的な挑戦 -->
+      <!-- 技術的な工夫・チャレンジ -->
       <div class="detail-section">
         <h2>
-          <i class="fas fa-code"></i>
-          技術的な挑戦
+          <i class="fas fa-wrench"></i>
+          技術的な工夫・チャレンジ
         </h2>
         <div class="feature-grid">
-          <div class="feature-item" style="border-left: 4px solid #FF9500;">
-            <h3>📱 初のSwift/iOS開発</h3>
-            <p>Webアプリ開発の経験を活かし、ネイティブiOSアプリに初挑戦。Swiftの型システムとSwiftUIの習得。</p>
+          <div class="feature-item" style="border-left: 4px solid #34C759;">
+            <h3>⚡ パフォーマンス最適化</h3>
+            <p>大量の写真を扱う際のメモリ管理とパフォーマンス最適化。LazyVGridとバッチ処理で軽快な動作を実現。</p>
           </div>
-          <div class="feature-item" style="border-left: 4px solid #FF9500;">
-            <h3>🖼️ Photos Framework統合</h3>
-            <p>大量の写真データを効率的に処理。バッチ処理、メモリ管理、パフォーマンス最適化。</p>
+          <div class="feature-item" style="border-left: 4px solid #34C759;">
+            <h3>💰 広告収益化</h3>
+            <p>広告の適切なタイミングでの表示制御。ユーザー体験を損なわない広告配置とフリーケンシーキャップ実装。</p>
           </div>
-          <div class="feature-item" style="border-left: 4px solid #FF9500;">
-            <h3>🔐 プライバシー対応</h3>
-            <p>写真ライブラリアクセスの権限管理。ユーザーデータ保護とApp Storeガイドライン遵守。</p>
+          <div class="feature-item" style="border-left: 4px solid #34C759;">
+            <h3>📱 レスポンシブデザイン</h3>
+            <p>iPhone/iPad両対応。StackNavigationViewStyleでデバイスごとに最適化されたUIを提供。</p>
           </div>
-          <div class="feature-item" style="border-left: 4px solid #FF9500;">
-            <h3>📊 大容量データ処理</h3>
-            <p>数千枚の写真データをスムーズにソート・表示。非同期処理とUIの応答性維持。</p>
+          <div class="feature-item" style="border-left: 4px solid #34C759;">
+            <h3>🔒 プライバシー保護</h3>
+            <p>App Storeガイドラインへの完全準拠。ATT対応、プライバシーポリシー整備、データ保護の徹底。</p>
           </div>
-          <div class="feature-item" style="border-left: 4px solid #FF9500;">
-            <h3>🎯 App Store公開</h3>
-            <p>App Store審査に向けた準備。アプリアイコン、スクリーンショット、プライバシーポリシー作成。</p>
+          <div class="feature-item" style="border-left: 4px solid #34C759;">
+            <h3>🎨 直感的なUX</h3>
+            <p>スワイプUIで楽しく整理。ピンチジェスチャーでグリッド数を動的変更。</p>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid #34C759;">
+            <h3>📋 App Store審査対応</h3>
+            <p>アプリアイコン、スクリーンショット、プライバシーポリシー、サポートページの作成と審査提出。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 開発期間と成果 -->
+      <div class="detail-section">
+        <h2>
+          <i class="fas fa-trophy"></i>
+          開発期間と成果
+        </h2>
+        <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); margin-bottom: 1.5rem;">
+          <div style="margin-bottom: 1rem;">
+            <strong style="color: rgba(255, 255, 255, 0.95);">⏱️ 制作期間:</strong>
+            <span style="color: rgba(255, 255, 255, 0.8);"> 約1週間（機能実装・UI調整・審査準備）</span>
+          </div>
+          <div style="margin-bottom: 1rem;">
+            <strong style="color: rgba(255, 255, 255, 0.95);">✅ 現在の状況:</strong>
+            <span style="color: rgba(255, 255, 255, 0.8);"> App Store審査中</span>
+          </div>
+          <div>
+            <strong style="color: rgba(255, 255, 255, 0.95);">🎯 目標:</strong>
+            <span style="color: rgba(255, 255, 255, 0.8);"> App Store公開・ユーザーフィードバック収集</span>
+          </div>
+        </div>
+
+        <h3 style="color: rgba(255, 255, 255, 0.95); margin-bottom: 1rem; margin-top: 2rem;">
+          <i class="fas fa-graduation-cap"></i> 学んだこと
+        </h3>
+        <div class="feature-grid">
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(52, 199, 89, 0.1) 0%, rgba(48, 209, 88, 0.05) 100%);">
+            <h3>📱 SwiftUIでのネイティブiOS開発</h3>
+            <p>Webアプリから初のネイティブアプリ開発。Swiftの型システム、SwiftUIの宣言的UI、Photos Frameworkの活用を習得。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(255, 149, 0, 0.1) 0%, rgba(255, 159, 10, 0.05) 100%);">
+            <h3>🏪 App Store審査プロセス</h3>
+            <p>App Store Connect、TestFlight、審査ガイドライン、メタデータ最適化の実践的な理解。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(94, 92, 230, 0.1) 0%, rgba(87, 86, 214, 0.05) 100%);">
+            <h3>� 広告収益化の実装</h3>
+            <p>AdMob統合、広告タイミング制御、ユーザー体験とのバランス調整を経験。</p>
+          </div>
+          <div class="feature-item" style="background: linear-gradient(135deg, rgba(175, 82, 222, 0.1) 0%, rgba(191, 90, 242, 0.05) 100%);">
+            <h3>� プライバシー・データ保護</h3>
+            <p>ATT対応、プライバシーポリシー作成、ユーザーデータ保護の実践。App Storeのプライバシー要件を深く理解。</p>
           </div>
         </div>
       </div>
@@ -3293,38 +3437,12 @@
             <p>類似画像を自動検出し、重複ファイルを削減。機械学習で画像比較。</p>
           </div>
           <div class="feature-item" style="background: linear-gradient(135deg, rgba(175, 82, 222, 0.1) 0%, rgba(191, 90, 242, 0.05) 100%);">
-            <h3>📊 詳細分析</h3>
+            <h3>� 詳細分析</h3>
             <p>撮影場所、時間帯、カメラモード別の容量分析。データ可視化の強化。</p>
           </div>
           <div class="feature-item" style="background: linear-gradient(135deg, rgba(255, 204, 0, 0.1) 0%, rgba(255, 214, 10, 0.05) 100%);">
-            <h3>🔄 自動整理</h3>
+            <h3>🔄 自動整理提案</h3>
             <p>定期的に大容量ファイルを通知。スマートな自動削除提案機能。</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 開発期間・ステータス -->
-      <div class="detail-section">
-        <h2>
-          <i class="fas fa-calendar-alt"></i>
-          開発ステータス
-        </h2>
-        <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
-          <div style="margin-bottom: 1rem;">
-            <strong style="color: rgba(255, 255, 255, 0.95);">🚧 現在の状況:</strong>
-            <span style="color: rgba(255, 255, 255, 0.8);"> 企画・設計フェーズ</span>
-          </div>
-          <div style="margin-bottom: 1rem;">
-            <strong style="color: rgba(255, 255, 255, 0.95);">🎯 目標:</strong>
-            <span style="color: rgba(255, 255, 255, 0.8);"> App Store公開</span>
-          </div>
-          <div style="margin-bottom: 1rem;">
-            <strong style="color: rgba(255, 255, 255, 0.95);">📅 予定:</strong>
-            <span style="color: rgba(255, 255, 255, 0.8);"> 2025年内のリリースを目指す</span>
-          </div>
-          <div>
-            <strong style="color: rgba(255, 255, 255, 0.95);">💪 開発アプローチ:</strong>
-            <span style="color: rgba(255, 255, 255, 0.8);"> MVPから始め、ユーザーフィードバックを元に機能拡張</span>
           </div>
         </div>
       </div>
@@ -4897,7 +5015,20 @@
     let currentDataToolSlide = 1;
     const totalDataToolSlides = 8;
 
-    // 各スライドの説明文
+    // PhotoSort スライダー変数
+    let currentPhotoSortSlide = 1;
+    const totalPhotoSortSlides = 5;
+
+    // PhotoSort 各スライドの説明文
+    const photoSortSlideDescriptions = {
+      1: '📊 統計ビュー - デバイス容量の可視化、写真・動画別の容量分析、最大ファイルのランキング表示',
+      2: '👆 スワイプモード - 直感的なUI。左スワイプで削除候補、右で保持、上で次回除外',
+      3: '🎯 グリッドビュー - 容量/日付でソート可能。ピンチで2〜5列に変更、写真・動画のフィルタリング',
+      4: '🗑️ 削除候補管理 - 左スワイプで追加した写真を一括管理。復元ボタンで取り消し可能',
+      5: '⏭️ 次回除外リスト - 上スワイプで追加。残したい写真を登録して次回の整理時に自動スキップ'
+    };
+
+    // データツール 各スライドの説明文
     const slideDescriptions = {
       1: '単品検索画面。キーワードを入力して即座に価格情報を取得し、分析・可視化が可能です。',
       2: '取得した情報の統計情報表示。平均価格、最高値・最低値、データ件数などの基本統計量を一覧で確認できます。',
@@ -4908,6 +5039,58 @@
       7: '仕入れ・販売の機会探索。価格差が大きいキーワードを抽出し、適切な仕入れ・販売の機会を提案します。',
       8: 'グラフ表示機能。価格分布ヒストグラム、プラットフォーム比較グラフ、利益ランキングなど、多様なグラフでデータを可視化します。'
     };
+
+    // PhotoSort スライダー関数
+    function changePhotoSortSlide(direction) {
+      currentPhotoSortSlide += direction;
+      
+      if (currentPhotoSortSlide > totalPhotoSortSlides) {
+        currentPhotoSortSlide = 1;
+      } else if (currentPhotoSortSlide < 1) {
+        currentPhotoSortSlide = totalPhotoSortSlides;
+      }
+      
+      updatePhotoSortSlider();
+    }
+
+    function setPhotoSortSlide(slideNumber) {
+      currentPhotoSortSlide = slideNumber;
+      updatePhotoSortSlider();
+    }
+
+    function updatePhotoSortSlider() {
+      // 画像の表示/非表示を切り替え
+      const images = document.querySelectorAll('#photo-organizer-app .slider-image');
+      images.forEach((img, index) => {
+        if (index + 1 === currentPhotoSortSlide) {
+          img.classList.add('active');
+        } else {
+          img.classList.remove('active');
+        }
+      });
+
+      // インジケーターの更新
+      const indicators = document.querySelectorAll('#photo-organizer-app .slider-indicator');
+      indicators.forEach((indicator, index) => {
+        if (index + 1 === currentPhotoSortSlide) {
+          indicator.classList.add('active');
+        } else {
+          indicator.classList.remove('active');
+        }
+      });
+
+      // カウンターの更新
+      const counter = document.getElementById('photoSortSlideCounter');
+      if (counter) {
+        counter.textContent = `${currentPhotoSortSlide} / ${totalPhotoSortSlides}`;
+      }
+
+      // 説明文の更新
+      const description = document.getElementById('photoSortSlideDescription');
+      if (description) {
+        description.textContent = photoSortSlideDescriptions[currentPhotoSortSlide];
+      }
+    }
 
     function changeDataToolSlide(direction) {
       currentDataToolSlide += direction;
