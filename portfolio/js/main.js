@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { icon: '☁️', title: 'iCloud Drive同期', desc: 'iCloud Driveを利用したデバイス間同期に対応。Macのファイルアプリなどからもアクセス可能。' }
             ],
             tech: ['Swift', 'SwiftUI', 'iOS 17+', 'FileManager', 'WidgetKit', 'WebKit', 'AppIntent'],
-            period: '現在開発中',
+            period: '約3週間（機能実装・UI調整・審査準備）',
             achievements: [
                 'SwiftUIとUIKit (WKWebView) のブリッジ実装による技術的知見',
                 'WidgetKitのライフサイクルとデータ更新頻度の最適化',
