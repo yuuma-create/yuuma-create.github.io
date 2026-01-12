@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const projectData = {
         sprout: {
             badge: '🌐 App Store公開中',
-            title: 'Sprout - ノート＆マークダウンエディタ',
+            title: 'Sprout - プレーンテキストエディタ',
             subtitle: 'ウィジェットやブラウザ機能を統合した、思考を"育てる"ためのiOSネイティブメモアプリ',
             images: [
                 { src: '../image/sprout_browser.png', alt: 'ブラウザ一体型メモ: 調べて、そのまま書く' },
@@ -159,27 +159,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 { src: '../image/sprout_reminder.png', alt: 'リマインダー: 「あとで」を確実に通知' },
                 { src: '../image/sprout_customization.png', alt: 'カスタマイズ: 文字サイズもカラーも自由自在' }
             ],
-            overview: '日常のメモ書きからWebブラウジングまで、思考の整理をワンストップで行えるiOSネイティブアプリ。Markdown記法に対応した強力なテキストエディタに加え、アプリ内ブラウザ、ウィジェット機能、柔軟な検索システムを統合。Webで見つけた情報を即座にメモに取り込み、アイデアを"種（Seed）"から育てていくことができるツールです。',
-            motivation: '日々の情報収集において、ブラウザとメモアプリを行き来することのストレスを感じていました。「Webで見つけた情報をその場でメモし、後ですぐに見返したい」「ホーム画面からワンタップで重要なメモにアクセスしたい」というニーズを解決するため、ブラウジング機能とウィジェットを深く統合したメモアプリをSwiftで開発しました。',
+            overview: '動作の軽快さとシンプルさを追求したiOSネイティブメモアプリ。余計な装飾を排したプレーンテキストエディタに、Webブラウザとウィジェット機能を統合。日々のメモ書きや、Web情報のストックをストレスなく行えるツールとして開発しました。',
+            motivation: '既存の「高機能すぎる」メモアプリは起動が遅かったり、機能が複雑で使いこなせないことがありました。「もっと手軽に、起動してすぐに書き始めたい」「ホーム画面にメモを置いて忘れないようにしたい」という原点回帰のニーズに応えるため、SwiftUIで軽量なネイティブアプリを自作しました。',
             features: [
-                { icon: '📝', title: '高機能Markdownエディタ', desc: 'SwiftUIとTextKitを組み合わせたカスタムエディタ。シンタックスハイライト、検索ハイライトに対応。' },
-                { icon: '🌐', title: 'アプリ内ブラウザ統合', desc: 'WKWebViewベースのブラウザを内蔵。Web閲覧中にスムーズにメモを取ることができ、履歴管理もサポート。' },
-                { icon: '📱', title: '充実したウィジェット', desc: 'WidgetKitを活用。Pinned Note、Recent Notes、Command Centerなど多様なウィジェットを提供。' },
-                { icon: '🔍', title: '高度な検索と整理', desc: 'Core Dataによる高速全文検索。お気に入り、フォルダ管理、ゴミ箱機能を完備。' },
-                { icon: '🔄', title: 'iCloud同期', desc: 'CloudKitを使用したデバイス間のデータ連携（※実装計画に基づく）。' }
+                { icon: '📝', title: 'プレーンテキストエディタ', desc: 'SwiftUIの標準コンポーネントを活かした、極めてシンプルで軽量なエディタ。起動が爆速で、「書くこと」に集中できる。' },
+                { icon: '🌐', title: 'アプリ内ブラウザ統合', desc: 'WKWebViewベースのブラウザを内蔵。Web閲覧中にスムーズにメモを取ることができ、ChatGPT等のAIツールも並行して参照可能。' },
+                { icon: '📱', title: 'ホーム画面ウィジェット', desc: 'WidgetKitを活用。Pinned Note機能でホーム画面に重要メモを常駐。ワンタップで編集再開。' },
+                { icon: '📂', title: 'ファイルベース管理', desc: '標準のFileManagerを使用し、オープンなファイルシステムでメモを管理。データの透明性を確保。' },
+                { icon: '☁️', title: 'iCloud Drive同期', desc: 'iCloud Driveを利用したデバイス間同期に対応。Macのファイルアプリなどからもアクセス可能。' }
             ],
-            tech: ['Swift', 'SwiftUI', 'iOS 17+', 'Core Data', 'WidgetKit', 'TextKit', 'WebKit'],
+            tech: ['Swift', 'SwiftUI', 'iOS 17+', 'FileManager', 'WidgetKit', 'WebKit', 'AppIntent'],
             period: '現在開発中',
             achievements: [
-                'UITextViewをラップした独自のSproutTextEditorの開発',
-                'App Groupを使用したメインアプリとウィジェット間のデータ共有',
-                'MVVMパターンによるクリーンアーキテクチャの採用',
-                'Combineフレームワークを活用した検索パフォーマンス最適化'
+                'SwiftUIとUIKit (WKWebView) のブリッジ実装による技術的知見',
+                'WidgetKitのライフサイクルとデータ更新頻度の最適化',
+                'iOSサンドボックス環境下でのファイル操作とiCloud同期の実装'
             ],
             futureVision: [
-                { icon: '☁️', title: 'iCloud完全同期', desc: 'デバイス間でのシームレスな作業環境の提供。' },
-                { icon: '🤖', title: 'AI要約・整理', desc: '長文メモの自動要約や、関連するメモの自動リンク提案機能。' },
-                { icon: '🎨', title: 'テーマカスタマイズ', desc: 'ユーザーがエディタの配色やフォントを自由に設定できる機能の拡充。' }
+                { icon: '🔎', title: '検索機能の強化', desc: '全文検索の精度と速度向上。より快適なファイル検索体験へ。' },
+                { icon: '📂', title: 'フォルダ整理', desc: 'フラットなリストだけでなく、サブフォルダ管理への対応強化。' },
+                { icon: '🎨', title: 'テーマ機能', desc: 'ダークモード完全対応に加え、好みのアクセントカラーを選べる機能の実装。' }
             ],
             links: [
                 { type: 'primary', icon: 'fa-brands fa-app-store-ios', text: 'App Storeで見る', url: '#' }
