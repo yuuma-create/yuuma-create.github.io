@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { icon: '🎨', title: 'テーマ機能', desc: 'ダークモード完全対応に加え、好みのアクセントカラーを選べる機能の実装。' }
             ],
             links: [
-                { type: 'primary', icon: 'fa-brands fa-app-store-ios', text: 'App Storeで見る', url: '#' }
+                { type: 'primary', icon: 'fa-brands fa-app-store-ios', text: 'App Storeで見る', url: 'https://apps.apple.com/us/app/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E4%B8%80%E4%BD%93%E5%9E%8B%E3%83%A1%E3%83%A2%E5%B8%B3-sprout/id6757397195' }
             ]
         },
         photosort: {
