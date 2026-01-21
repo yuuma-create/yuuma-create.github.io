@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HapticsBrowser サポート</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+        h1 {
+            margin: 0;
+            color: #333;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+        }
+        h2 {
+            border-left: 4px solid #0066cc;
+            padding-left: 10px;
+            margin-top: 40px;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        .question {
+            font-weight: bold;
+            color: #0066cc;
+            margin-bottom: 10px;
+        }
+        .answer {
+            margin-left: 20px;
+        }
+        .contact-box {
+            background-color: #eef7ff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.8em;
+            color: #666;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HapticsBrowser</h1>
+        <p class="subtitle">Web Bluetooth Haptics Bridge Utility</p>
+    </header>
+
+    <section>
+        <h2>アプリについて</h2>
+        <p>HapticsBrowserは、WebアプリケーションからBluetooth LE (BLE) デバイスを制御するための開発者・ホビイスト向けユーティリティブラウザです。JavaScriptを使用してハードウェアと通信し、IoTデバイスの動作検証やプロトタイピングをスムーズに行うことができます。</p>
+    </section>
+
+    <section>
+        <h2>よくある質問 (FAQ)</h2>
+
+        <div class="faq-item">
+            <div class="question">Q. デバイスが見つかりません (スキャンに表示されません)</div>
+            <div class="answer">
+                <p>以下の点をご確認ください。</p>
+                <ul>
+                    <li>デバイスの電源が入っており、Bluetoothペアリングモードになっているか確認してください。</li>
+                    <li><strong>重要:</strong> iOSの「設定」アプリで既にデバイスとペアリングされている場合、アプリから見えなくなることがあります。「設定」&gt;「Bluetooth」から該当デバイスの登録を解除（またはBluetoothを一度オフ/オン）してから、アプリ内で再スキャンしてください。</li>
+                    <li>本アプリはBluetooth利用権限が必要です。初回起動時の許可ダイアログで許可しましたか？（iOSの「設定」&gt;「HapticsBrowser」から確認できます）</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question">Q. どのデバイスに対応していますか？</div>
+            <div class="answer">
+                <p>本アプリは汎用的なBLE書き込み（Write Characteristic）に対応しています。主に以下のプロトコルをサポートしています。</p>
+                <ul>
+                    <li>標準的な回転制御プロトコル (Type A / Type B)</li>
+                    <li>リニアアクチュエータ制御プロトコル (Type P)</li>
+                    <li>その他、Genericな書き込みが可能なBLEモジュール (ESP32, Arduino等)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question">Q. Webサイトから制御するにはどうすればいいですか？</div>
+            <div class="answer">
+                <p>Webサイト側のJavaScriptで、Web Bluetooth APIの代わりに本アプリ独自のメッセージハンドラを使用する必要があります。詳細なドキュメントは <a href="#">開発者向けガイド（準備中）</a> をご覧ください。</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="question">Q. 接続がすぐに切れてしまいます</div>
+            <div class="answer">
+                <p>デバイスのバッテリー残量をご確認ください。また、他のBluetooth機器との干渉を避けるため、Wifiルーターの近くなどで使用しないことをお勧めします。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-box">
+        <h3>お問い合わせ</h3>
+        <p>不具合の報告や機能リクエストは、以下のメールアドレスまでご連絡ください。</p>
+        <p><strong><a href="mailto:contact@example.com">contact@example.com</a></strong></p>
+        <p><small>（※メールには使用しているiOSのバージョン、デバイスの種類を記載してください）</small></p>
+    </section>
+    
+    <section style="text-align: center; margin-top: 20px;">
+        <p><a href="privacy.html">プライバシーポリシー</a></p>
+    </section>
+
+    <footer>
+        &copy; 2026 HapticsBrowser Developer. All rights reserved.
+    </footer>
+</body>
+</html>
